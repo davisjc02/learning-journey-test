@@ -1,0 +1,1933 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Learning Journey</title>
+
+  <style>
+
+    :root {
+      --green-primary: #036937;
+      --green-light: #28915A;
+      --green-lighter: #5AB98C;
+      --green-dark: #024B28;
+      --green-darker: #01321C;
+      --green-tint: #D2EBDE;
+
+      --green-main-background: #F8FAF9;
+      --green-card-background: #FFFFFF;
+      --green-subtle-section: #EEF3F0;
+      --green-primary-text: #0F172A;
+      --green-secondary-text: #475569;
+      --green-muted-text: #64748B;
+
+      --purple-primary: #553278;
+      --purple-light: #73509B;
+      --purple-lighter: #A587C3;
+      --purple-dark: #41265C;
+      --purple-darker: #301C46;
+      --purple-tint: #E6DEF0;
+
+      --purple-main-background: #FAF9FC;
+      --purple-card-background: #FFFFFF;
+      --purple-subtle-section: #F1EEF6;
+      --purple-primary-text: #111827;
+      --purple-secondary-text: #4B5563;
+      --purple-muted-text: #6B7280;
+    }
+
+    body {
+      background-color: var(--green-lightest);
+    }
+
+    #outer-container {
+      width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      /* border: 1px solid red; */
+
+    }
+
+    #buttons-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      /* border: 1px solid green; */
+
+    }
+
+    #qualification-button-block {
+      display: flex;
+      justify-content: center;
+      width: 380px;
+      height: min-content;
+      margin: 1em;
+      background-color: var(--green-primary);
+      box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+    }
+
+    #gcse-button-block,
+    #btec-button-block,
+    #camb-nat-button-block {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 380px;
+      height: min-content;
+      background-color: var(--green-primary);
+      box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2em;
+    }
+
+    #gcse-button-block {
+      display: flex;
+    }
+
+    #btec-button-block {
+      display: none;
+    }
+
+    #camb-nat-button-block {
+      display: none;
+    }
+
+    /* reset WordPress button styling */
+    .qualification-btn {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .gcse-subject-btn,
+    .btec-subject-btn,
+    .camb-nat-subject-btn {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    /* ------------------------------ */
+
+    .qualification-btn {
+      background-color: var(--green-primary);
+      color: var(--green-tint);
+      margin: 2px;
+      border-radius: 4px;
+      text-align: center;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-size: 14px;
+      padding: 3px 8px;
+    }
+
+    .qualification-btn:hover {
+      color: white;
+    }
+
+    .qualification-btn:active {
+      color: white;
+    }
+  
+    .gcse-subject-btn,
+    .btec-subject-btn,
+    .camb-nat-subject-btn {
+      background-color: var(--green-primary);
+      color: var(--green-tint);
+      margin: 2px;
+      border-radius: 4px;
+      text-align: center;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-size: 12px;
+      padding: 3px 8px;
+    }
+
+    .gcse-subject-btn:hover,
+    .btec-subject-btn:hover,
+    .camb-nat-subject-btn:hover {
+      color: white;
+    }
+
+    .gcse-subject-btn:active,
+    .btec-subject-btn:active,
+    .camb-nat-subject-btn:active {
+      color: white;
+    }
+
+    .current-btn {
+      background-color: var(--green-lighter);
+      color: white;
+    }
+
+    /* visibility of cards */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+
+    /* learning journey card */
+
+    .learning-journey-green {
+      position: relative;
+      width: 336px;
+      height: 480px;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: var(--green-primary);
+      box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-section {
+      width: 100%;
+      height: 15%;
+    }
+
+    .top-section h3 {
+      font-family: sans-serif;
+      font-size: 24px;
+      color: var(--green-tint);
+      margin: 0;
+    }
+
+    .subject {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;    
+      font-family: sans-serif;
+      color: var(--green-card-background);
+    }
+
+    .subject h4 {
+      font-size: 16px;
+    }
+
+    .subject h5 {
+      font-size: 8px;
+    }
+
+    .term-section {
+      position: relative;
+      width: 100%;
+      height: 28%;
+      background-color: var(--green-card-background);
+    }
+
+    .term-section svg {
+      position: absolute;
+      left: 0px;
+      top: 10px;
+      width: 100%;
+      height: auto;
+    }
+
+    .term-section h5 {
+      position: absolute;
+      left: 145px;
+      top: 38px;
+      font-family: sans-serif;
+      font-size: 10px;
+      color: var(--green-light);
+    }
+
+    .term-list {
+      position: absolute;
+      left: 40px;
+      height: 50px;
+      width: 270px;
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .first-half {
+      top: 5px;
+      flex-direction: row-reverse;
+    }
+
+    .second-half {
+      top: 65px;
+    }
+
+    .textbox {
+      font-family: sans-serif;
+      color: var(--green-primary-text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5px;
+      background-color: var(--green-card-background);
+      border: 2px solid var(--green-light);
+      border-radius: 8px;
+      font-size: 7px;
+    }
+
+    .textbox span {
+      display: block;
+    }
+
+    .textbox:hover {
+      transform: scale(1.5);
+    }
+
+
+    @media (min-width: 640px) {
+
+      #outer-container { width: 640px;}
+
+      .learning-journey-green {
+        width: 500px;
+        height: 700px;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .learning-journey-green h3 { font-size: 36px; }
+
+      .top-section h3 { font-size: 36px; }
+
+      .subject h4 { font-size: 24px; }
+
+      .subject h5 { font-size: 12px; }
+
+      .term-section h5 {
+        left: 220px;
+        top: 52px;
+        font-size: 15px;
+      }
+
+      .term-list {
+        left: 60px;
+        height: 70px;
+        width: 400px;
+      }
+
+      .first-half {
+        top: 5px;
+        flex-direction: row-reverse;
+      }
+
+      .second-half {
+        top: 95px;
+      }
+
+      .textbox {
+        border: 2px solid var(--green-light);
+        border-radius: 8px;
+        font-size: 12px;
+      }
+
+      .textbox:hover {
+        transform: none;
+      }
+
+    }
+
+    @media (min-width: 960px) {
+
+      #outer-container {
+        width: 960px;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+    }
+
+    .screenreader-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <script id="gcse-data" type="application/json">
+
+    {
+
+      "art": {
+        "title": "Art",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Unit 2:", "coursework", "project"],
+              ["Develop", "independence"],
+              ["Make own responses", "based on study of", "other artists' work"]
+            ],
+            "second": [
+              ["Research,", "develop ideas", "and skills"],
+              ["Photoshoots"],
+              ["Create personal response", "for controlled assessment"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Final piece", "produce a", "personal response"],
+              ["Refine ideas,", "experiment,", "plan for final outcomes"]
+            ],
+            "second": [
+              ["Research mind maps,", "mood boards"],
+              ["Evaluate and submit", "coursework, begin", "externally set task"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Develop own ideas", "linked to chosen", "artists"],
+              ["Refine skills and", "ideas, experiment,", "plan for final outcomes"]
+            ],
+            "second": [
+              ["GCSE set task:", "produce final piece"],
+              ["End of year", "exhibition"]
+            ]
+          }
+        }
+      },
+
+      "biology": {
+        "title": "Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Reproduction and", "inheritance"]
+            ],
+            "second": [
+              ["Adaptation"],
+              ["Classification"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Organising", "an ecosystem"]
+            ],
+            "second": [
+              ["Biodiversity", "and ecosystems"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Final revision"]
+            ],
+            "second": [
+            ]
+          }
+        }
+      },
+
+      "comb-sc-biology": {
+        "title": "Combined Science: Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Reproduction and", "inheritance"],
+              ["Variation and", "evolution"]
+            ],
+            "second": [
+              ["Variation and", "evolution"],
+              ["Evidence for", "evolution, and", "classification"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Adaptations", "interdependence", "and competition"]
+            ],
+            "second": [
+              ["Biodiversity", "and ecosystems"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"]
+            ],
+            "second": [
+              ["Exam period"]
+            ]
+          }
+        }
+      },
+
+      "trip-sc-biology": {
+        "title": "Triple Science: Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Homeostasis"]
+            ],
+            "second": [
+              ["Reproduction and", "inheritance"],
+              ["Variation and", "evolution"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Evidence for", "evolution, and", "classification"]
+            ],
+            "second": [
+              ["Organising an", "ecosystem"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"]
+            ],
+            "second": [
+              ["Exam period"]
+            ]
+          }
+        }
+      },
+
+      "business": {
+        "title": "Business Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Organic and", "inorganic growth"],
+              ["Public limited", "companies"],
+              ["Sources of", "finance (for", "growth)"]
+            ],
+            "second": [
+              ["Globalisation", "and trade", "barriers"],
+              ["Ethics and", "the environment"],
+              ["Using the", "Marketing Mix"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["The sales", "process"],
+              ["Working with", "suppliers, and", "quality control"],
+              ["Business", "operations"]
+            ],
+            "second": [
+              ["Business", "calculations", "and performance"],
+              ["Organisational", "structures"],
+              ["Recruitment,", "training and", "development"],
+              ["Motivation"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision and", "mock assessment", "- Theme 1"],
+              ["Revision and", "mock assessment", "- Theme 2"]
+            ],
+            "second": [
+              ["End of exams"]
+            ]
+          }
+        }
+      },
+
+      "chemistry": {
+        "title": "Chemistry",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Quantitative", "Chemistry part 1"],
+              ["Drop down day:", "Titrations"]
+            ],
+            "second": [
+              ["Quantitative", "Chemistry part 2"],
+              ["Equilibrium"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Organic", "Chemistry part 1"],
+              ["Atmosphere"]
+            ],
+            "second": [
+              ["Drop down day:", "Ion tests"],
+              ["Transition metals", "and life cycle", "assessment"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Organic", "Chemistry part 2"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "comb-sc-chemistry": {
+        "title": "Combined Science: Chemistry",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Quantitative", "Chemistry part 1"],
+              ["Drop down day:", "Titrations"]
+            ],
+            "second": [
+              ["Quantitative", "Chemistry part 2"],
+              ["Equilibrium"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Organic", "Chemistry part 1"]
+            ],
+            "second": [
+              ["Atmosphere"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Life cycle", "assessment"]
+            ],
+            "second": [
+              ["Sodium and", "oxygen", "interleaving"]
+            ]
+          }
+        }
+      },
+
+      "computer-sc": {
+        "title": "Computer Science",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Programming", "techniques"],
+              ["Non-examined", "assessment"]
+            ],
+            "second": [
+              ["Ethical and", "environmental", "issues"],
+              ["Data", "representation"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Mock exam"],
+              ["System", "security"]
+            ],
+            "second": [
+              ["Computational", "logic"],
+              ["System", "software"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Systems", "architecture"],
+              ["May exam"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "des-tech": {
+        "title": "Design and Technology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Complete research", "section of NEA", "coursework"],
+              ["Revise exam", "paper topics"]
+            ],
+            "second": [
+              ["Complete design and", "modelling sections of", "NEA coursework"],
+              ["Revise exam", "paper topics"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Complete the making", "and evaluating sections", "of NEA coursework"],
+              ["Revise exam", "paper topics"]
+            ],
+            "second": [
+              ["Complete NEA", "coursework"],
+              ["Exam preparation using", "a variety of revision", "techniques"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Exam preparation using", "a variety of revision", "techniques"]
+            ],
+            "second": [
+              ["Exam preparation using", "a variety of revision", "techniques"]
+            ]
+          }
+        }
+      },
+
+      "drama": {
+        "title": "Drama",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["<i>Blood Brothers</i>", "revisited"],
+              ["Complete devising", "log sections", "B/C"]
+            ],
+            "second": [
+              ["Live theatre", "review"],
+              ["Script", "exploration"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Script", "rehearsals /", "prep"],
+              ["Component 1", "recap"]
+            ],
+            "second": [
+              ["Scripted module", "(Component 3)"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "english-lang": {
+        "title": "English Language",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Explorations in", "creative reading", "and writing"]
+            ],
+            "second": [
+              ["Writers' viewpoints", "and perspectives"],
+              ["Reading and", "writing practice"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Writers' viewpoints", "and perspectives"],
+              ["Reading and", "writing practice"]
+            ],
+            "second": [
+              ["Explorations in", "creative reading", "and writing"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision for", "both Language", "papers"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "english-lit": {
+        "title": "English Literature",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["<i>An Inspector</i>", "<i>Calls</i>"]
+            ],
+            "second": [
+              ["Power and", "conflict anthology", "- poems"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Unseen poetry", "practice"]
+            ],
+            "second": [
+              ["<i>Romeo and</i>", "<i>Juliet</i> revision"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["<i>A Christmas</i>", "<i>Carol</i> revision"]
+            ],
+            "second": [
+              ["Revision for", "all aspects", "of Literature"]
+            ]
+          }
+        }
+      },
+
+      "food-prep": {
+        "title": "Food Preparation and Nutrition",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["NEA 1 (non-examined", "assessment, 15%", "of final grade)"],
+              ["AQA set task:", "Food investigation"]
+            ],
+            "second": [
+              ["NEA 2 (35%", "of final grade)"],
+              ["AQA set task: ", "Food preparation"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["NEA 2 food", "preparation task"],
+              ["Cooking and", "evaluating dishes"]
+            ],
+            "second": [
+              ["NEA 2 food", "preparation task"],
+              ["3hr food", "practical exam"],
+              ["Costing and", "evaluating nutrition"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Exam preparation:", "revision, practical", "activities and tests"]
+            ],
+            "second": [
+              ["Final exam", "(90 mins, 50% of grade)"]
+            ]
+          }
+        }
+      },
+
+      "french": {
+        "title": "French",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["NEA 1 (GCSE Unit 6", "- Celebrity Culture:", "discussing fame and", "popular culture"],
+              ["Mock exams,", "including mock", "speaking"]
+            ],
+            "second": [
+              ["GCSE Unit 7", "- Travel and Tourism:", "describing holidays", "and travelling"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["GCSE Unit 8", "- Media and Technology:", "discussing the uses", "of technology"],
+              ["Mock exams,", "including mock", "speaking"]
+            ],
+            "second": [
+              ["GCSE Unit 9", "The Environment:", "discussing the planet", "and where we live"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"],
+              ["GCSE speaking exam", "and GCSE listening,", "reading and writing", "exams"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "geography": {
+        "title": "Geography",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Physical fieldwork:", "coasts"]
+            ],
+            "second": [
+              ["Glaciated landscapes", "in the UK"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Introduction to", "resoure management"],
+              ["Energy"]
+            ],
+            "second": [
+              ["Paper 3 preparation:", "pre-release and", "fieldwork"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Preparation for", "exams"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "history": {
+        "title": "History",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Vietnam War"]
+            ],
+            "second": [
+              ["USA Civil Rights"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Anglo Saxons", "and Normans"]
+            ],
+            "second": [
+              ["Anglo Saxons", "and Normans"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "mandarin": {
+        "title": "Mandarin Chinese",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Jobs and career"],
+              ["Theme 2, T1:", "Home, town", "neighbourhood", "and region"]
+            ],
+            "second": [
+              ["Mock practice"],
+              ["Theme 2, T4:", "Travel and tourism"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Theme 2, T2:", "Social issues"]
+            ],
+            "second": [
+              ["Theme 2, T3:", "Global issues"],
+              ["Exam preparation:", "listening and", "reading skills"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Speaking test", "preparation"],
+              ["Full topic revision", "and past paper", "practice"]
+            ],
+            "second": [
+              ["listening, reading,", "and writing exams"]
+            ]
+          }
+        }
+      },
+
+      "maths-fndtn": {
+        "title": "Mathematics, Foundation Tier",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Algebra - manipulation", "and equations"],
+              ["Ratio and", "proportion"]
+            ],
+            "second": [
+              ["Percentage", "multipliers"],
+              ["Speed / distance /", "time"],
+              ["Transformations"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Mock exam"]
+            ],
+            "second": [
+              ["Consolidation and", "revision"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "maths-hghr": {
+        "title": "Mathematics, Higher Tier",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Simultaneous", "equations"]
+            ],
+            "second": [
+              ["Complex graphs", "and the equation", "of a circle"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Growth and", "decay"],
+              ["Percentage", "multipliers"],
+              ["Poof"],
+              ["Trigonometric", "graphs"]
+            ],
+            "second": [
+              ["Revision and", "exam preparation"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "fthr-maths": {
+        "title": "Further Mathematics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Solving inequalities,", "binomial expansion,", "functions"],
+              ["Advanced factorising", "factor theorem"],
+              ["Mock exam 1"]
+            ],
+            "second": [
+              ["Circles and", "tangents"],
+              ["Sequences, solving three", "simultaneous equations,", "differentiation"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Matrices,", "trigonometric graphs"],
+              ["Identities and", "equations"],
+              ["Mock exam 2"]
+            ],
+            "second": [
+              ["Consolidation of weaker", "topics identified from", "mock exam 2"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision and", "exam preparation"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "media": {
+        "title": "Media Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Continue NEA", "(Component 3)"]
+            ],
+            "second": [
+              ["TV dramas", "(Component 2)"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Music videos", "(Component 2)"]
+            ],
+            "second": [
+              ["Revision"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "music": {
+        "title": "Music",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Brief composition (GCSE)"]
+            ],
+            "second": [
+              ["Performance recording (GCSE)"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Performance skills (GCSE)"]
+            ],
+            "second": [
+              ["Appraising exam", "preparation"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "pshee": {
+        "title": "Personal Social Health<br />and Economic Education",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Mental health and", "wellbeing: GCSE stress,", "self care"]
+            ],
+            "second": [
+              ["Drugs and alcohol:", "the law and", "dependency"],
+              ["Online safety"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Being safe:", "exploitation", "online"],
+              ["Respectful relationships:", "self examination,", "STIs, serious", "relationships"]
+            ],
+            "second": [
+              ["Fundamental", "British values"],
+              ["Careers and", "economic education"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "photography": {
+        "title": "Photogrphy",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Unit 2:", "coursework", "project"],
+              ["Develop", "independence"],
+              ["Make own responses", "based on study of", "other photographer's", "work"]
+            ],
+            "second": [
+              ["Research, develop", "ideas and skills"],
+              ["Create personal response", "for controlled", "assessment"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Coursework final piece:", "produce a personal", "response"],
+              ["Refine ideas,", "experiment,", "plan for", "final outcomes"],
+              ["Evaluate and submit", "coursework, begin", "externally set task"]
+            ],
+            "second": [
+              ["Develop", "mind maps,", "mood boards"],
+              ["Digital", "manipulation"],
+              ["Develop own", "ideas"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Review and refine", "skills and ideas"],
+              ["Refine ideas", "experiment, plan", "for final outcomes"]
+            ],
+            "second": [
+              ["GCSE set task:", "produce personal", "response, a.k.a Final", "Piece"],
+              ["End of year", "exhibition"]
+            ]
+          }
+        }
+      },
+
+      "pe": {
+        "title": "Physical Education",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["NEA: Analysis", "and evaluation"]
+            ],
+            "second": [
+              ["Paper 1:", "Movement", "analysis"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Paper 2:", "Sociocultural", "influences"]
+            ],
+            "second": [
+              ["Revision"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "pe-core": {
+        "title": "Physical Education Core",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Paper 2: Skill", "classes and goal", "setting"]
+            ],
+            "second": [
+              ["Paper 2: Information", "processing and", "guidance"],
+              ["Paper 2: Mental", "preparation"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Paper 2: Engagement", "and commercialisation"]
+            ],
+            "second": [
+              ["Paper 2: Ethical", "and sociocultural", "issues"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Paper 2: Physical,", "emotional and social"],
+              ["Paper 2: Energy use"]
+            ],
+            "second": [
+              ["Paper 2: Diet", "and nutrition"]
+            ]
+          }
+        }
+      },
+
+      "physics": {
+        "title": "Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Electric", "circuits"],
+              ["Atomic", "structure"]
+            ],
+            "second": [
+              ["Electric", "circuits"],
+              ["Further", "waves"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Further", "waves"],
+              ["Forces and", "motion"]
+            ],
+            "second": [
+              ["Pressure"],
+              ["Electromagnetism"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "comb-sc-physics": {
+        "title": "Combined Science: Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Atomic Physics"],
+              ["Electricity"],
+              ["Forces", "and motion"]
+            ],
+            "second": [
+              ["Forces", "and motion"],
+              ["Electromagnetism"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Electromagnetism"]
+            ],
+            "second": []
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "trip-sc-physics": {
+        "title": "Triple Science: Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Atomic Physics"],
+              ["Electricity"],
+              ["Space", "and waves"]
+            ],
+            "second": [
+              ["Forces", "and motion"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Forces", "and motion"],
+              ["Waves"],
+              ["Electromagnetism"]
+            ],
+            "second": [
+              ["Electromagnetism"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "rs": {
+        "title": "Religious Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Religion and crime"]
+            ],
+            "second": [
+              ["Christian practices"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Peace and conflict"]
+            ],
+            "second": [
+              ["Revision"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "spanish": {
+        "title": "Spanish",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["GCSE Unit 6, Celebrity", "Culture: discussing fame", "and popular culture"],
+              ["Mock exams,", "including mock", "speaking"]
+            ],
+            "second": [
+              ["GCSE Unit 7, Travel", "and Tourism: describing", "holidays and travelling"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["GCSE Unit 9, The", "Environment: discussing", "the planet and where", "we live"]
+            ],
+            "second": [
+              ["Revision"],
+              ["GCSE speaking exam"],
+              ["GCSE listening,", "reading and writing", "exams"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      }
+
+    }
+
+  </script>
+
+  <script id="btec-data" type="application/json">
+
+    {
+
+      "media": {
+        "title": "Creative Media Production 2nd Year",
+        "level": "BTEC",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Publishing planning"],
+              ["Publishing processes"]
+            ],
+            "second": [
+              ["Making a magazine", "cover and article"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Develop ideas", "in response", "to a brief"]
+            ],
+            "second": [
+              ["External component:", "create a media product", "in response to", "a brief"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Submit a media product", "in response to a brief"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "it": {
+        "title": "Digital IT 2nd Year",
+        "level": "BTEC",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Representing", " information"],
+              ["Characteristics", "of data and", "information"],
+              ["Data collection"]
+            ],
+            "second": [
+              ["Suitability for", "processing"],
+              ["Sectors"],
+              ["Threats"],
+              ["Data processing", "methods"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Quality of", "information"],
+              ["Produce a", "dashboard"]
+            ],
+            "second": [
+              ["Drawing conclusions", "based on", "data"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["How presentation", "affects understanding"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "health-and-soc": {
+        "title": "Health and Social Care 2nd Year",
+        "level": "BTEC",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Component 2: Health", "and Social Care", "services and values"]
+            ],
+            "second": [
+              ["Component 2: PSA"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Component 3: health", "and wellbeing"]
+            ],
+            "second": [
+              ["Component 3: health", "and wellbeing"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Component 3: health", "and wellbeing"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "sport": {
+        "title": "Sport 2nd Year",
+        "level": "BTEC",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Unit 3: developing", "fitness to improve", "performance"]
+            ],
+            "second": [
+              ["Unit 3: demonstrate", "knowledge of facts,", "components of fitness", "fitness tests"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Unit 3: demonstrate", "training methods,", "principles in relation", "to improving fitness", "in sport"]
+            ],
+            "second": [
+              ["Unit 3: apply an understanding", "of facts, components of fitness,", "fitness tests, training methods /", "processes / principles in relation", "to improving fitness in sport"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Unit 3: make connections with", "concepts, facts, components of fitness,", "fitness tests, training methods /", "processes / principles in relation", "to improving fitness in sport"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "tech-ent": {
+        "title": "Tech Enterprise 2nd Year",
+        "level": "BTEC",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Pitching a micro", "enterprise activity"],
+              ["Reviewing your", "micro enterpise"]
+            ],
+            "second": [
+              ["Market", "segmentation"],
+              ["The Marketing", "Mix"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Financial documents", "and payment methods"],
+              ["Revenues", "and costs"],
+              ["Financial", "statements"]
+            ],
+            "second": [
+              ["Profitability", "and liquidity"],
+              ["Cash flow", "forecasting"],
+              ["Break even", "analysis"]
+            ]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      }
+
+    }
+
+  </script>
+
+  <script id="camb-nat-data" type="application/json">
+
+    {
+
+      "engin-manuf": {
+        "title": "Engineering Manfacture 2nd Year",
+        "level": "Cambridge National",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["(R014 Exam)", "Manufacturing", "Requirements"],
+              ["(R016 Coursework)", "Task 1: Manufacture", "Templates"]
+            ],
+            "second": [
+              ["(R014 Exam) LEAN", "manufacturing"],
+              ["(R014 Exam)", "inventory", "management"],
+              ["(R016 Coursework)", "Task 2: Produce", "a standard operating", "procedure"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["(R014 Exam)", "Automation"],
+              ["(R014 Exam)", "Globalisation"],
+              ["(R016 Coursework)", "Task 3: Use", "CAD software"]
+            ],
+            "second": [
+              ["R014 Exam", "preparation /", "revision"],
+              ["(R016 Coursework) Task 4:", "Set up and use", "CNC equipment"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["R014 Exam", "preparation /", "revision"],
+              ["(R016 Coursework) Task 5:", "Quality control"]
+            ],
+            "second": []
+          }
+        }
+      },
+
+      "it": {
+        "title": "IT 2nd Year",
+        "level": "Cambridge National",
+        "terms": {
+          "autumn": {
+            "first": [
+              ["Augmented", "reality"],
+              ["Testing and", "reviewing a", "prototype"]
+            ],
+            "second": [
+              ["NEA assessment"]
+            ]
+          },
+          "spring": {
+            "first": [
+              ["Cyber", "security"],
+              ["Legislation"]
+            ],
+            "second": [
+              ["Cyber", "security"]
+            ]
+          },
+          "summer": {
+            "first": [
+              ["Revision"]
+            ],
+            "second": []
+          }
+        }
+      }
+
+    }
+
+  </script>
+
+
+  <div id="outer-container">
+
+    <div id="buttons-container">
+
+      <!-- Qualification buttons -->
+      <div id="qualification-button-block" aria-label="Select qualification">
+        <button class="qualification-btn" type="button" data-qualification="gcse">GCSE</button>
+        <button class="qualification-btn" type="button" data-qualification="btec">BTEC</button>
+        <button class="qualification-btn" type="button" data-qualification="camb-nat">Cambridge National</button>
+      </div>
+
+      <!-- GCSE buttons -->
+      <div id="gcse-button-block" aria-label="Select GCSE subject">
+        <button class="gcse-subject-btn" type="button" data-subject="art">Art</button>
+        <button class="gcse-subject-btn" type="button" data-subject="biology">Biology</button>
+        <button class="gcse-subject-btn" type="button" data-subject="comb-sc-biology">Combined Science: Biology</button>
+        <button class="gcse-subject-btn" type="button" data-subject="trip-sc-biology">Triple Science: Biology</button>
+        <button class="gcse-subject-btn" type="button" data-subject="business">Business Studies</button>
+        <button class="gcse-subject-btn" type="button" data-subject="chemistry">Chemistry</button>
+        <button class="gcse-subject-btn" type="button" data-subject="comb-sc-chemistry">Combined Science: Chemistry</button>
+        <button class="gcse-subject-btn" type="button" data-subject="computer-sc">Computer Science</button>
+        <button class="gcse-subject-btn" type="button" data-subject="des-tech">Design and Technology</button>
+        <button class="gcse-subject-btn" type="button" data-subject="drama">Drama</button>
+        <button class="gcse-subject-btn" type="button" data-subject="english-lang">English Language</button>
+        <button class="gcse-subject-btn" type="button" data-subject="english-lit">English Literature</button>
+        <button class="gcse-subject-btn" type="button" data-subject="food-prep">Food Preparation and Nutrition</button>
+        <button class="gcse-subject-btn" type="button" data-subject="french">French</button>
+        <button class="gcse-subject-btn" type="button" data-subject="geography">Geography</button>
+        <button class="gcse-subject-btn" type="button" data-subject="history">History</button>
+        <button class="gcse-subject-btn" type="button" data-subject="mandarin">Mandarin Chinese</button>
+        <button class="gcse-subject-btn" type="button" data-subject="maths-fndtn">Maths, Foundation Tier</button>
+        <button class="gcse-subject-btn" type="button" data-subject="maths-hghr">Maths, Higher Tier</button>
+        <button class="gcse-subject-btn" type="button" data-subject="fthr-maths">Further Maths</button>
+        <button class="gcse-subject-btn" type="button" data-subject="media">Media Studies</button>
+        <button class="gcse-subject-btn" type="button" data-subject="music">Music</button>
+        <button class="gcse-subject-btn" type="button" data-subject="pshee">PSHEE</button>
+        <button class="gcse-subject-btn" type="button" data-subject="photography">Photography</button>
+        <button class="gcse-subject-btn" type="button" data-subject="pe">PE</button>
+        <button class="gcse-subject-btn" type="button" data-subject="pe-core">PE Core</button>
+        <button class="gcse-subject-btn" type="button" data-subject="physics">Physics</button>
+        <button class="gcse-subject-btn" type="button" data-subject="comb-sc-physics">Combined Science: Physics</button>
+        <button class="gcse-subject-btn" type="button" data-subject="trip-sc-physics">Triple Science: Physics</button>
+        <button class="gcse-subject-btn" type="button" data-subject="rs">Religious Studies</button>
+        <button class="gcse-subject-btn" type="button" data-subject="spanish">Spanish</button>
+      </div>
+
+      <!-- BTEC buttons -->
+      <div id="btec-button-block" aria-label="Select BTEC subject">
+        <button class="btec-subject-btn" type="button" data-subject="media">Creative Media Production</button>
+        <button class="btec-subject-btn" type="button" data-subject="it">Digital IT</button>
+        <button class="btec-subject-btn" type="button" data-subject="health-and-soc">Health and Social Care</button>
+        <button class="btec-subject-btn" type="button" data-subject="sport">Sport</button>
+        <button class="btec-subject-btn" type="button" data-subject="tech-ent">Tech Enterprise</button>
+      </div>
+
+      <!-- Cambridge National buttons -->
+      <div id="camb-nat-button-block" aria-label="Select Cambridge National subject">
+        <button class="camb-nat-subject-btn" type="button" data-subject="engin-manuf">Engineering Manufacture</button>
+        <button class="camb-nat-subject-btn" type="button" data-subject="it">IT</button>
+      </div>
+
+    </div>
+
+
+    <!-- The Learning Journey diagram goes here as innerHTML -->
+    <div id="learning-journey-root"></div>
+
+
+    <script>
+
+      document.addEventListener("DOMContentLoaded", () => {
+
+        // get the data
+
+        const gcseData = document.getElementById("gcse-data");
+        let gcseJourneys;
+        try {
+          gcseJourneys = JSON.parse(gcseData.textContent);
+          console.log("GCSE journeys data loaded:", gcseJourneys);
+        } catch (e) {
+          console.error("Invalid GCSE journeys JSON", e);
+          return;
+        }
+
+        const btecData = document.getElementById("btec-data");
+        let btecJourneys;
+        try {
+          btecJourneys = JSON.parse(btecData.textContent);
+          console.log("BTEC journeys data loaded:", btecJourneys);
+        } catch (e) {
+          console.error("Invalid BTEC journeys JSON", e);
+          return;
+        }
+
+        const cambNatData = document.getElementById("camb-nat-data");
+        let cambNatJourneys;
+        try {
+          cambNatJourneys = JSON.parse(cambNatData.textContent);
+          console.log("Cambridge National journeys data loaded:", cambNatJourneys);
+        } catch (e) {
+          console.error("Invalid Cambridge National journeys JSON", e);
+          return;
+        }
+
+        // === SVG arrow ===
+        const termArrowSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 32" height="100%" width="auto"><g transform="scale(0.04) translate(0,-2420)"><path fill="#279059" d="m 2254,3177 -45,-45 31,0 31,0 0,-7 c 1,-29 -16,-46 -47,-55 -5,-2 -56,-2 -983,-2 l -977,-2 -10,-2 c -48,-11 -77,-42 -88,-95 L 165,2960 V 2810 c 0,-160 -0,-154 5,-174 5,-18 14,-33 27,-47 13,-13 27,-21 47,-28 C 267,2554 169,2555 1248,2555 c 881,0 969,-0 976,-2 24,-5 38,-20 45,-46 2,-8 2,-10 3,-58 l 0.37,-50 h 27 27 l 0,52 c 0,56 -1,58 -7,79 -9,30 -32,57 -60,69 -11,5 -13,6 -26,8 -8,2 -60,2 -985,2 l -977,1 -11,4 c -22,8 -34,19 -39,39 -2,6 -2,16 -2,157 0,143 0,150 2,158 4,16 13,30 23,37 3,2 10,5 14,7 l 8,3 977,1 c 896,1 978,1 985,2 12,3 16,4 27,8 33,14 56,39 65,73 2,9 5,27 5,35 0,0 14,1 32,1 h 32 l -45,45 c -25,25 -45,45 -46,45 0,0 -21,-20 -45,-45 z" /></g></svg>`;
+
+
+        let qualification = "gcse";
+        let journeys = gcseJourneys;
+
+        let gcseSubject = "art";
+        let btecSubject = "media";
+        let cambNatSubject = "engin-manuf";
+
+        let list;
+
+        document.querySelectorAll(".qualification-btn").forEach(btn => {
+          list = btn.classList;
+          if (btn.dataset.qualification == qualification) {
+            list.add("current-btn");
+          } else {
+            list.remove("current-btn");
+          }
+        });
+
+        document.querySelectorAll(".gcse-subject-btn").forEach(btn => {
+          list = btn.classList;
+          if (btn.dataset.subject == gcseSubject) {
+            list.add("current-btn");
+          } else {
+            list.remove("current-btn");
+          }
+        });
+
+        document.querySelectorAll(".btec-subject-btn").forEach(btn => {
+          list = btn.classList;
+          if (btn.dataset.subject == btecSubject) {
+            list.add("current-btn");
+          } else {
+            list.remove("current-btn");
+          }
+        });
+
+        document.querySelectorAll(".camb-nat-subject-btn").forEach(btn => {
+          list = btn.classList;
+          if (btn.dataset.subject == cambNatSubject) {
+            list.add("current-btn");
+          } else {
+            list.remove("current-btn");
+          }
+        });
+
+        // hook up the qualification buttons
+        // on click: highlight the current button, show the buttons,
+        // specify what data to use and render the current journey
+        document.querySelectorAll(".qualification-btn").forEach(btn => {
+
+          btn.addEventListener("click", () => {
+
+            // unhighlight all the buttons then highlight the clicked one
+            let list;
+            document.querySelectorAll(".qualification-btn").forEach(button => {
+              list = button.classList;
+              list.remove("current-btn");
+            });
+            list = btn.classList;
+            list.add("current-btn");
+
+            const qualification = btn.dataset.qualification;
+            if (qualification=="gcse") {
+              block = "gcse-button-block";
+              journeys = gcseJourneys;
+              subject = gcseSubject;
+            } else if (qualification=="btec") {
+              block = "btec-button-block";
+              journeys = btecJourneys;
+              subject = btecSubject;
+            } else {
+              block = "camb-nat-button-block";
+              journeys = cambNatJourneys;
+              subject = cambNatSubject;
+            }
+            showSubjectButtons(block);
+            renderJourney(journeys, subject);
+          });
+        });
+
+        // hook up the GCSE subject buttons
+        // on click: highlight current button, render the journey
+        document.querySelectorAll(".gcse-subject-btn").forEach(btn => {
+
+          btn.addEventListener("click", () => {
+
+            // unhighlight all the buttons then highlight the clicked one
+            let list;
+            document.querySelectorAll(".gcse-subject-btn").forEach(button => {
+              list = button.classList;
+              list.remove("current-btn");
+            });
+            list = btn.classList;
+            list.add("current-btn");
+
+            gcseSubject = btn.dataset.subject;
+            renderJourney(journeys, gcseSubject);
+          });
+        });
+
+        // hook up the BTEC subject buttons
+        // on click: highlight current button, render the journey
+        document.querySelectorAll(".btec-subject-btn").forEach(btn => {
+
+          btn.addEventListener("click", () => {
+
+            // unhighlight all the buttons then highlight the clicked one
+            let list;
+            document.querySelectorAll(".btec-subject-btn").forEach(button => {
+              list = button.classList;
+              list.remove("current-btn");
+            });
+            list = btn.classList;
+            list.add("current-btn");
+
+            btecSubject = btn.dataset.subject;
+            renderJourney(journeys, btecSubject);
+          });
+        });
+
+        // hook up the Cambridge National subject buttons
+        // on click: highlight current button, render the journey
+        document.querySelectorAll(".camb-nat-subject-btn").forEach(btn => {
+
+          btn.addEventListener("click", () => {
+
+            // unhighlight all the buttons then highlight the clicked one
+            let list;
+            document.querySelectorAll(".camb-nat-subject-btn").forEach(button => {
+              list = button.classList;
+              list.remove("current-btn");
+            });
+            list = btn.classList;
+            list.add("current-btn");
+
+            cambNatSubject = btn.dataset.subject;
+            renderJourney(journeys, cambNatSubject);
+          });
+        });
+
+
+        // Render functions
+
+        function showSubjectButtons(block) {
+          document.getElementById("gcse-button-block").style.display = "none";
+          document.getElementById("btec-button-block").style.display = "none";
+          document.getElementById("camb-nat-button-block").style.display = "none";
+          document.getElementById(block).style.display = "flex";
+        }
+
+        function renderBox(lines) {
+          return `<li class="textbox">
+            ${lines.map(l => `<span>${l}</span>`).join("")}
+          </li>`;
+        }
+
+        function renderTerm(name, term) {
+          if (!term) return "";
+
+          return `
+            <section class="term-section">
+              ${termArrowSVG}
+              <h5 class="term-name">${name} term</h5>
+              <h6 class="screenreader-only">${name} term, first half</h6>
+              <ul class="term-list first-half">
+                ${(term.first || []).map(renderBox).join("")}
+              </ul>
+              <h6 class="screenreader-only">${name} term, second half</h6>
+              <ul class="term-list second-half">
+                ${(term.second || []).map(renderBox).join("")}
+              </ul>
+            </section>
+          `;
+        }
+
+        function renderJourney(journeys, subject) {
+
+          const data = journeys[subject];
+          if (!data) {
+            console.warn(`No journey data found for: ${subject}`);
+            document.getElementById("learning-journey-root").innerHTML = `<p>No journey found for "${subject}"</p>`;
+            return;
+          }
+
+          if (subject=="pshee") {  // EDGE CASE!!
+            titleHtml = `<h4 style="font-size: 14px;">${data.title}<h4>`
+          } else {
+            titleHtml = `<h4>${data.title}<h4>`
+          }
+
+          document.getElementById("learning-journey-root").innerHTML = `
+            <div class="learning-journey-green">
+
+              <section class="top-section">
+                <h3>Learning Journey</h3>
+                <div class="subject">
+                  ${titleHtml}
+                  <h5>${data.level}</h5>
+                </div>
+              </section>
+
+              ${renderTerm("Autumn", data.terms.autumn)}
+              ${renderTerm("Spring", data.terms.spring)}
+              ${renderTerm("Summer", data.terms.summer)}
+
+            </div>
+          `;
+
+        }
+
+
+        renderJourney(gcseJourneys, "art");
+
+      });
+
+    </script>
+
+  </div>
+
+</body>
