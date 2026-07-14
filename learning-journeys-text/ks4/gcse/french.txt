@@ -1,0 +1,50 @@
+id: french
+menu title: French
+card title: French
+
+
+Y10
+
+HT1
+GCSE Unit 2: Healthy living and lifestyle - thalking about eating out / different cuisines
+
+HT2
+GCSE Unit 3: Education and work - describing school and your studies
+
+HT3
+GCSE Unit 3: Education and work - talking about post 16s and future careers
+
+HT4
+GCSE Unit 4: Free time activities - talking about sports and pastimes
+
+HT5
+GCSE Unit: Customs and festivals - describing celebrations and traditions
+
+HT6
+GCSE unit 5: Customs and festivals - discussing francophone celebrations
+Mock exams including mock speaking assessment
+
+
+Y11
+
+HT1
+GCSE Unit 6: Celebrity culture - discussing fame and popular culture
+Mock exams including mock speaking
+
+HT2
+GCSE Unit 7: Travel and tourism - describing holidays and travelling
+
+HT3
+GCSE Unit 8: Media and technology - discussing the uses of technology
+Mock exams including mock speaking
+
+HT4
+GCSE Unit 9: The environment - discussing the planet and where we live
+
+HT5
+Revision
+GCSE speaking exam
+GCSE listening, reading and writing exams
+
+HT6
+null

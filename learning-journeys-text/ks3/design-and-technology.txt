@@ -1,0 +1,32 @@
+id: des-tech
+menu title: Design and Technology
+card title: Design and Technology
+
+
+Y9
+
+HT1
+Polymers and Metals project: casting and moulding techniques
+Cookie Cutter project
+
+HT2
+Box project: different timbers, design strategies, isometric and orthographic drawing
+Using a variety of finishes, components and joints
+
+HT3
+Textiles projects: properties of textiles and how they are made
+Environmental impact
+Design movement
+
+HT4
+Understanding circuits, a systems approach
+Programmable components
+
+HT5
+Architecture project
+Paper, card and MDF materials
+Researching influential designers
+Modelling, CAD / CAM
+
+HT6
+Using card and paper to simulate mechanisms

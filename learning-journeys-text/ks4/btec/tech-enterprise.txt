@@ -1,0 +1,57 @@
+id: tech-ent
+menu title: Tech Enterprise
+card title: Tech Enterprise
+
+
+Y10
+
+HT1
+What is an enterprise?
+Characteristics and purpose of enterprise
+
+HT2
+Entrepreneur characteristics and skills
+Understanding customers
+
+HT3
+Primary market research
+Understanding competitors
+
+HT4
+Internal environment
+Secondary market research
+
+HT5
+External environment
+Situational analysis
+
+HT6
+Generating enterprise ideas
+Planning a micro enterprise activity
+
+
+Y11
+
+HT1
+Pitching a micro enterprise activity
+Reviewing your micro enterprise
+
+HT2
+Market segmentation
+The Marketing Mix
+
+HT3
+Financial documents and payment methods
+Revenues and costs
+Financial statements
+
+HT4
+Profitability and liquidity
+Cash flow forecasting
+Break even analysis
+
+HT5
+Exam revision
+
+HT6
+null

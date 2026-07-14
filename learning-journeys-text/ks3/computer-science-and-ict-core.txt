@@ -1,0 +1,24 @@
+id: comp-sc-ict-core
+menu title: Computer Science and ICT Core
+card title: Computer Science and ICT Core
+
+
+Y9
+
+HT1
+AI and machine learning
+
+HT2
+AI and machine learning
+
+HT3
+Spreadsheets and data manipulation
+
+HT4
+Spreadsheets and data manipulation
+
+HT5
+Cyber security and e-safety
+
+HT6
+Cyber security and e-safety

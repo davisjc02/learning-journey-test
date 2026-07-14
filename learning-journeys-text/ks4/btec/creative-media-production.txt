@@ -1,0 +1,52 @@
+id: creative-media-prod
+menu title: Creative Media Production
+card title: Creative Media Production
+
+
+Y10
+
+HT1
+Audience and purpose
+Media sectors
+Defining audience
+
+HT2
+Analysing the purpose of products
+Genre
+Narrative
+
+HT3
+Representation
+Audience interpretation
+
+HT4
+Pre-production processes
+
+HT5
+Production processes
+
+HT6
+Post production processes
+Making a moving image product
+
+
+Y11
+
+HT1
+Publishing planning
+Publishing processes
+
+HT2
+Making a magazine cover and article
+
+HT3
+Develop ideas in response to a brief
+
+HT4
+External component: create a media product in response to a brief
+
+HT5
+May: submit a media product in response to a brief
+
+HT6
+null

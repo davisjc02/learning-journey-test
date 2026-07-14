@@ -1,0 +1,55 @@
+id: info-tech
+menu title: Information Technology
+card title: Information Technology
+
+
+Y10
+
+HT1
+Design tools
+Project consideration and planning
+
+HT2
+Human-comuter interface
+User interaction
+Data and testing
+
+HT3
+Creating a spreadsheet solution
+Stakeholder consideration
+
+HT4
+Spreadsheet skills
+Testing and evaluation
+
+HT5
+NE: create a HCI
+Anugmented reality
+
+HT6
+Internet of everything
+Creating an AR model
+
+
+Y11
+
+HT1
+Augmented reality
+Testing and reviewing a prototype
+
+HT2
+NEA assessment
+
+HT3
+NEA assessment
+Cyber security
+
+HT4
+Legislation
+Cyber security
+
+HT5
+Revision
+
+HT6
+null

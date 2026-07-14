@@ -1,0 +1,45 @@
+id: health-and-soc
+menu title: Health and Social Care
+card title: Health and Social Care
+
+
+Y10
+
+HT1
+Component 1: human lifespan development
+
+HT2
+Component 1: human lifespan development
+
+HT3
+Component 1: PSA
+
+HT4
+Component 1: PSA
+
+HT5
+Component 2: Health and Social Care services and values
+
+HT6
+Component 2: Health and Social Care services and values
+
+
+Y11
+
+HT1
+Component 2: Health and Social Care services and values
+
+HT2
+Component 2: PSA
+
+HT3
+Component 3: health and wellbeing
+
+HT4
+Component 3: health and wellbeing
+
+HT5
+Component 3: health and wellbeing
+
+HT6
+Component 3 - exam

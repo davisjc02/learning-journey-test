@@ -1,0 +1,66 @@
+id: spanish
+menu title: Spanish
+card title: Spanish
+
+
+Y7
+
+HT1
+<i>Mi vida</>: describing yourself
+
+HT2
+<i>Mi tiempo libre</i>: talking about free-time
+
+HT3
+<i>Mi insti</i>: discussing life at school
+
+HT4
+<i>Mi familia y mis amigos</i>: describing family and friends
+
+HT5
+<i>Mi ciudad</i>: talking about your city
+
+HT6
+Revision, speaking presentations, and “Race Across Spain”!
+
+
+Y8
+
+HT1
+<i>Mis vacaciones</i>: describing past holidays
+
+HT2
+<i>Todo sobre mi vida</i>: discussing technology, music and TV
+
+HT3
+<i>¡A comer!</i>: talking about food and ordering at a restaurant
+
+HT4
+<i>¿Qué hacemos?</i>: making plans and getting ready to go out
+
+HT5
+<i>Operación verano</i>: describing holiday activities and summer camps
+
+HT6
+Revision, speking presentations and film study of <i>Coco!</i>
+
+
+Y9
+
+HT1
+<i>Somos así</i>: talking about things you like/dislike and celebrations
+
+HT2
+<i>En forma</i>: discussing healthy lifestyles and daily routines
+
+HT3
+<iu>Jóvenes en acción</i>: discussing children's lives, rights and the environment
+
+HT4
+GCSE Unit 1: Identity and relationships - describing others
+
+HT5
+GCSE Unit 1: Identity and relationships - describing your relationship with others
+
+HT6
+GCSE Unit 2: Healthy living and lifestyle - discussing your diet and health

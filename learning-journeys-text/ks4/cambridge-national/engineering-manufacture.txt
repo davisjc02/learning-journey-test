@@ -1,0 +1,68 @@
+id: engin-manuf
+menu title: Engineering Manufacture
+card title: Engineering Manufacture
+
+
+Y10
+
+HT1
+Metals
+Reading engineering drawings
+Polymers
+Coursework task 1: planning the manufacture
+
+HT2
+Composites
+Ceramics
+Smart materials
+Coursework task 2: risk assessment
+
+HT3
+Forming processes
+Wasting processes
+Shaping processes
+Coursework task 3: measuring and marking out
+
+HT4
+Joining processes
+Finishing processes
+Additive manufacturing
+Coursework task 4: machining
+
+HT5
+Scales of production
+Jigs
+Fixtures, templates and moulds
+Coursework task 5: use of tools and equipment
+
+HT6
+Computer aided manufacture
+Quality control and assurance
+
+
+Y11
+
+HT1
+Manufacturing requirements
+Coursework task 1: manufacture templates
+
+HT2
+LEAN manufacturing
+Coursework task 2: produce a standard operating procedure
+
+HT3
+Inventory management
+Automation
+Coursework task 3: use CAD software
+
+HT4
+Globalisation
+Exam prep / revision
+Coursework task 4: set up and operate CNC equipment
+
+HT5
+Exam prep / revision
+Coursework task 5: quality control
+
+HT6
+null

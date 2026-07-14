@@ -1,0 +1,65 @@
+id: des-tech-food
+menu title: Design and Technology / Food
+card title: Design and Technology / Food
+
+
+Y7
+
+HT1
+<u>Design and Technology</u> Happy Hook project
+Drawing in 2 point perspective
+Research the Alessi brand
+Understand a brief and specification
+
+HT2
+Create design ideas
+Make a happy hook and evaluate the final outcome
+
+HT3
+<u>Textiles</u> Cultural Cushion project
+Research art and textiles of African countries
+Learn how to tie-dye, sublimation print, block print
+Use a sewing machine
+
+HT4
+<u>Textiles</u> create tesselated patterns, make a cushion using hand and machine sewing
+
+HT5
+<u>Food</u> learn about healthy eating and the Eatwell Guide
+Make a fruit salad and apple crumble following good food hygene and safety rules
+
+HT6
+<u>Food</u> learn about the seasonality of food and food miles
+Make a smoothie and pasta salad
+
+
+Y8
+
+HT1
+<u>Design and Technology</u> Child's Toy project
+Develop 3D drawing techniques
+Understand the properties and uses of different woods and materials
+Learn the reasons behind modelling
+
+HT2
+Manufacture a toy using machine and hand tools
+<u>Electronics</u> understand circuits, resistance and a systems approach to design
+
+HT3
+<u>Textiles</u> Cuddly Toy project
+Research different fabrics, toys and components
+Understand the importance of modelling
+
+HT4
+<u>Textiles</u> make a soft toy using hand and machine sewing techniques
+Evaluate the final outcome
+
+HT5
+<u>Food</u> develop knowledge of healthy eating and link this to nutrients
+Create a healthy sandwich and muffins following good safety and hygiene rules
+
+HT6
+<u>Food</u> design and make a pizza
+Understand how yeast works
+Create a healthy pasta bake
+Understand where our food comes from

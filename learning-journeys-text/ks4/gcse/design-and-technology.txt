@@ -1,0 +1,61 @@
+id: des-tech
+menu title: Design and Technology
+card title: Design and Technology
+
+
+Y10
+
+HT1
+Card and Paper project: the properties and sources of paper and card; gumball machine
+New and emerging technologies
+Isometric and orthographic drawing
+
+HT2
+Polymer project: properties and sources
+Injection moulding and and blow moulding
+Environmental impact
+Energy storage and generation CAD / CAM
+
+HT3
+Textiles project: testing techniques, manufacturing a working product - a bag for life
+Mini NEA based on the work of others
+
+HT4
+Metals project: the properties and origins of a variety of metals
+Renewable sources and waste management
+Pewter casting using Memphis design movement
+
+HT5
+Timbers project: properties and sources of timbers
+Lamp project: mini multi-material NEA
+Forces and stresses, mechanical components, mechanisms and their characteristics
+
+HT6
+Begin Year 11 NEA coursework: analysing exam board contexts
+Researching existing products
+Designing own ideas
+
+
+Y11
+
+HT1
+Complete research section of NEA coursework
+Revise exam paper topics
+
+HT2
+Complete design and modelling sections of NEA coursework
+Revise exam paper topics
+
+HT3
+Complete the making and evaluating sections of NEA coursework
+Revise exam paper topics
+
+HT4
+Complete NEA coursework
+Exam preparation using a variety of revision techniques
+
+HT5
+Exam preparation using a variety of revision techniques
+
+HT6
+Exam preparation using a variety of revision techniques

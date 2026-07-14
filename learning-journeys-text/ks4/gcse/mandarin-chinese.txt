@@ -1,0 +1,52 @@
+id: mandarin
+menu title: Mandarin Chinese
+card title: Mandarin Chinese
+
+
+Y10
+
+HT1
+Theme 1: revision of topic 1, Marriage
+Theme 1, topic 2: Technology in everyday life - mobile tech
+
+HT2
+Theme 1, topic 2: Technology in everyday life - social media
+
+HT3
+Theme 3, topic 3: Education post 16
+Topic 4: Customs and festivals in Chinese speaking countries
+
+HT4
+Theme 3, topic 4: Jobs, career choices and ambitions
+Revision of Theme 1 and Theme 3
+HSK 3 test
+
+HT5
+Theme 2, topic 1: Home, town, neighbourhood
+
+HT6
+Theme 2, topic 4: Travel and tourism
+
+
+Y11
+
+HT1
+Jobs and careers
+Theme 2, topic 1: Home, town, neighbourhood and region
+
+HT2
+November mock practice
+THeme 2, topic 4: Travel and tourism
+
+HT3
+Theme 2, topic 2: Social issues
+
+HT4
+Theme 2, topic 3: Global issues
+Exam preparation: listening and reading skills
+
+HT5
+Speaking test preparation / full topic revision and past paper practice
+
+HT6
+Listening, reading and writing exams

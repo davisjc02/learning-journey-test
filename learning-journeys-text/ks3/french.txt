@@ -1,0 +1,66 @@
+id: french
+menu title: French
+card title: French
+
+
+Y7
+
+HT1
+<i>C'est perso</i>: talking about yourself
+
+HT2
+<i>Au collège</i>: describing your life at school
+
+HT3
+<i>Mes passetemps</i>: discussing your hobbies
+
+HT4
+<i>Ma zone</i>: describing your city.
+
+HT5
+<i>3, 2, 1… Partez!</i> Talking about holidays and future plans
+
+HT6
+Revision, speaking presentations and “Race Across France”!
+
+
+Y8
+
+HT1
+<i>T’es branché?</i>: giving opinions about TV, films, books and technology
+
+HT2
+<i>Paris, je t’adore!</i>: talking about Paris and past visits
+
+HT3
+<i>Mon identité</i>: discussing your friends, music and style
+
+HT4
+<i>Chez moi, chez toi</i>: describing where you live and mealtimes
+
+HT5
+<i>Quel talent?!</i>: discussing talents and ambitions
+
+HT6
+Revision, speaking presentations and film study of <i>Les Choristes!</i>
+
+
+Y9
+
+HT1
+<i>Bien dans sa peau</i>: dsicussing the body and healthy lifestyles
+
+HT2
+<i>Spécial vacances</i>: describing dream holidays and holiday disasters
+
+HT3
+<i>Moi dans le monde</i>: talking about rights, priorities and what makes you happy
+
+HT4
+GCSE Unit 1: Identity and relationships - describing others
+
+HT5
+GCSE Ubit 1: Identity and relationships - describing your relationship with others
+
+HT6
+GCSE Unit 2:: Healthy living and lifestyle - discussing your diet and health

@@ -1,0 +1,98 @@
+id: comp-sc-ict
+menu title: Computer Science and ICT
+card title: Computer Science and ICT
+
+
+Y7
+
+HT1
+Working digitally
+Working digitally safely
+
+HT2
+Cyber security
+Laws of computing
+
+HT3
+Cultural and ethical Issues
+App building
+
+HT4
+Iteration
+Sequences
+Binary and hexadecimal
+
+HT5
+Data representation
+Storage units
+Data types
+Variables
+
+HT6
+Procedures
+Functions
+Logic and languages
+
+
+Y8
+
+HT1
+RAM and ROM
+Types of memory
+Inputs and outputs
+
+HT2
+Computational thinking
+Block programming
+
+HT3
+App building
+Working digitally professionally
+
+HT4
+Units of measurement
+Binary
+Hexadecimal
+Images
+
+HT5
+Python programming
+Binary logic
+
+HT6
+Searching algorithms
+Computational and digital project
+
+
+Y9
+
+HT1
+Ciphers
+Encryption
+Programming
+
+HT2
+Programming techniques
+Data types
+Sequence / iteration / selection
+
+HT3
+System security
+Digital project
+Vulnerabilities
+
+HT4
+Storage
+Units of measurement
+Resolution
+Metadata
+
+HT5
+Networks
+Topologies
+Protocols
+Frequency and channels
+
+HT6
+Computational thinking
+Logic and programming

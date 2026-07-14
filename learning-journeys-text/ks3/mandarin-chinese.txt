@@ -1,0 +1,96 @@
+id: mandarin
+menu title: Mandarin Chinese
+card title: Mandarin Chinese
+
+
+Y7
+
+HT1
+Introduction to Pinyin and characters
+Greetings
+
+HT2
+Months and dates
+Numbers and age
+Days of the week
+Radicals
+
+HT3
+Pets: 你有宠物吗？
+Family: 你家有几口人能？
+Hobbies: 你的爱好是什么？
+Measure words
+
+HT4
+Sports: 你喜欢什么运动？
+MEP project
+Likes and dislikes
+Hurdle test revision
+
+HT5
+School subjects: 你喜欢什么课？
+Hurdle test – 4 skills
+Timetable: 几点？
+
+HT6
+MEP project
+Food: 我想吃…
+Drinks: 我想喝…
+Assessment
+
+
+Y8
+
+HT1
+Ongoing: writing characters and learning new radicals
+Holidays / past tense
+KS3 revision
+
+HT2
+Weather
+Transport
+Appearance
+CNY
+
+HT3
+Clothes and colours
+Daily routines
+Using verb-adjectives
+
+HT4
+Places in a town
+Relative place words
+
+HT5
+Weekend plans
+Hurdle test revision
+
+HT6
+Hurdle test
+Jobs
+
+
+Y9
+
+HT1
+Ongoing: writing characters and learning new radicals
+Jinbu 2: Chapter 4 - At the supermarket
+
+HT2
+Chapter 5: Travelling in China
+Theme 1, topic 1: Me, my family and friends
+
+HT3
+Theme 1, topic 3: Free time activities / sports and hobbies
+Chapter 5: Travelling in China
+
+HT4
+Theme 3, topic 1: My studies
+Theme 3, topic 3: Life at school / college
+
+HT5
+Hurdle test revision and Hurdle test
+
+HT6
+Theme 1, topic 3: Free time activities / food and drinks
+Year 9 Intensive Learning Day

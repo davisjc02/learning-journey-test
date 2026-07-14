@@ -1,0 +1,45 @@
+  <script id="cambnat-data" type="application/json">
+
+    {
+
+      "engin-manuf": {
+        "title": "Engineering Manfacture 2nd Year",
+        "level": "Cambridge National",
+        "terms": {
+          "autumn": {
+            "first": ["(R014 Exam) Manufacturing Requirements", "(R016 Coursework) Task 1: Manufacture Templates"],
+            "second": ["(R014 Exam) LEAN manufacturing", "(R014 Exam) inventory management", "(R016 Coursework) Task 2: Produce a standard operating procedure"]
+          },
+          "spring": {
+            "first": ["(R014 Exam) Automation", "(R014 Exam) Globalisation", "(R016 Coursework) Task 3: Use CAD software"],
+            "second": ["R014 Exam preparation / revision", "(R016 Coursework) Task 4: Set up and use CNC equipment"]
+          },
+          "summer": {
+            "first": ["R014 Exam preparation / revision", "(R016 Coursework) Task 5: Quality control"],
+            "second": []
+          }
+        }
+      },
+
+      "it": {
+        "title": "IT 2nd Year",
+        "level": "Cambridge National",
+        "terms": {
+          "autumn": {
+            "first": ["Augmented reality", "Testing and reviewing a prototype"],
+            "second": ["NEA assessment"]
+          },
+          "spring": {
+            "first": ["Legislation", "Cyber security"],
+            "second": ["Cyber security"]
+          },
+          "summer": {
+            "first": ["Revision"],
+            "second": []
+          }
+        }
+      }
+
+    }
+
+  </script>

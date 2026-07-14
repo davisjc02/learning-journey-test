@@ -1,0 +1,59 @@
+id: comp-sc
+menu title: Computer Science
+card title: Computer Science
+
+
+Y10
+
+HT1
+Networks
+Inputs / outputs / operators / constraints
+Memory
+
+HT2
+Programming constructs
+Networks
+Topologies
+
+HT3
+Protocols
+Logic gates
+Programming techniques
+
+HT4
+Data representation
+System architecture
+
+HT5
+Translators / compilers / assemblers / interpreters
+Standard algorithms
+
+HT6
+Programming techniques
+Non-examined assessment
+
+
+Y11
+
+HT1
+Programming techniques
+Non-examined assessment
+
+HT2
+Ethical and environmental issues
+Data representation
+
+HT3
+Mock exam
+System security
+
+HT4
+Computational logic
+System software
+
+HT5
+Systems architecture
+May exam
+
+HT6
+null

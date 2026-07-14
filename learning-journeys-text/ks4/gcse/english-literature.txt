@@ -1,0 +1,45 @@
+id: eng-lit
+menu title: English Literature
+card title: English Literature
+
+
+Y10
+
+HT1
+<i>Romeo and Juliet</i>
+
+HT2
+Unseen poetry
+
+HT3
+<i>A Christmas Carol</i>
+
+HT4
+<i>A Christmas Carol</i>
+
+HT5
+<i>Romeo and Juliet</i>
+
+HT6
+<i>An Inspector Calls</i>
+
+
+Y11
+
+HT1
+<i>An Inspector Calls</i>
+
+HT2
+Power and conflict anthology - poems
+
+HT3
+Unseen poetry practice
+
+HT4
+<i>Romeo and Juliet</i> revision
+
+HT5
+<i>A Christmas Carol</i> revision
+
+HT6
+Revision of all aspects of Literature

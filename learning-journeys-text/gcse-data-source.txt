@@ -1,0 +1,597 @@
+  <script id="gcse-data" type="application/json">
+
+    {
+
+      "art": {
+        "title": "Art",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Unit 2: coursework project", "Develop independence", "Make own responses based on study of other artist's work"],
+            "second": ["Research, develop ideas and skills", "Photoshoots", "Create personal response for controlled assessment"]
+          },
+          "spring": {
+            "first": ["Final piece, produce a personal response", "Refine ideas, experiment, plan for final outcomes"],
+            "second": ["Research mind maps, mood boards", "Evaluate and submit coursework, begin externally set task"]
+          },
+          "summer": {
+            "first": ["Develop own ideas linked to chosen artists", "Refine skills and ideas, experiment, plan for final outcomes"],
+            "second": ["GCSE set task: produce final piece", "End of year exhibition"]
+          }
+        }
+      },
+
+      "biology": {
+        "title": "Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Reproduction and inheritance"],
+            "second": ["Adaptation", "Classification"]
+          },
+          "spring": {
+            "first": ["Organising an ecosystem"],
+            "second": ["Biodiversity and ecosystems"]
+          },
+          "summer": {
+            "first": ["Final revision"],
+            "second": []
+          }
+        }
+      },
+
+      "comb-sc-biology": {
+        "title": "Combined Science: Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Reproduction and inheritance", "Variation and evolution"],
+            "second": ["Variation and evolution", "Evidence for evolution, and classification"]
+          },
+          "spring": {
+            "first": ["Adaptations interdependence and competition"],
+            "second": ["Biodiversity and ecosystems"]
+          },
+          "summer": {
+            "first": ["Revision"],
+            "second": ["Exam period"]
+          }
+        }
+      },
+
+      "trip-sc-biology": {
+        "title": "Triple Science: Biology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Homeostasis"],
+            "second": ["Reproduction and inheritance", "Variation and evolution"]
+          },
+          "spring": {
+            "first": ["Evidence for evolution, and classification"],
+            "second": ["Organising an ecosystem"]
+          },
+          "summer": {
+            "first": ["Revision"],
+            "second": ["Exam period"]
+          }
+        }
+      },
+
+      "business": {
+        "title": "Business Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Organic and inorganic growth", "Public limited companies", "Sources of finance (for growth)"],
+            "second": ["Globalisation and trade barriers", "Ethics and the environment", "Using the Marketing Mix"]
+          },
+          "spring": {
+            "first": ["The sales process", "Working with suppliers, and quality control", "Business operations"],
+            "second": ["Business calculations and performance", "Organisational structures", "Recruitment, training and development", "Motivation"]
+          },
+          "summer": {
+            "first": ["Revision and mock assessment - Theme 1", "Revision and mock assessment - Theme 2"],
+            "second": ["End of exams"]
+          }
+        }
+      },
+
+      "chemistry": {
+        "title": "Chemistry",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Quantitative Chemistry part 1", "Drop down day: Titrations"],
+            "second": ["Quantitative Chemistry part 2", "Equilibrium"]
+          },
+          "spring": {
+            "first": ["Organic Chemistry part 1", "Atmosphere"],
+            "second": ["Drop down day: Ion tests", "Transition metals and life cycle assessment"]
+          },
+          "summer": {
+            "first": ["Organic Chemistry part 2"],
+            "second": []
+          }
+        }
+      },
+
+      "comb-sc-chemistry": {
+        "title": "Combined Science: Chemistry",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Quantitative Chemistry part 1", "Drop down day: Titrations"],
+            "second": ["Quantitative Chemistry part 2", "Equilibrium"]
+          },
+          "spring": {
+            "first": ["Organic Chemistry part 1"],
+            "second": ["Atmosphere"]
+          },
+          "summer": {
+            "first": ["Life cycle assessment"],
+            "second": ["Sodium and oxygen interleaving"]
+          }
+        }
+      },
+
+      "computer-sc": {
+        "title": "Computer Science",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Programming techniques", "Non-examined assessment"],
+            "second": ["Ethical and environmental issues", "Data representation"]
+          },
+          "spring": {
+            "first": ["Mock exam", "System security"],
+            "second": ["Computational logic", "System software"]
+          },
+          "summer": {
+            "first": ["Systems architecture", "May exam"],
+            "second": []
+          }
+        }
+      },
+
+      "des-tech": {
+        "title": "Design and Technology",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Complete research section of NEA coursework", "Revise exam paper topics"],
+            "second": ["Complete design and modelling sections of NEA coursework", "Revise exam paper topics"]
+          },
+          "spring": {
+            "first": ["Complete the making and evaluating sections of NEA coursework", "Revise exam paper topics"],
+            "second": ["Complete NEA coursework", "Exam preparation using a variety of revision techniques"]
+          },
+          "summer": {
+            "first": ["Exam preparation using a variety of revision techniques"],
+            "second": ["Exam preparation using a variety of revision techniques"]
+          }
+        }
+      },
+
+      "drama": {
+        "title": "Drama",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["<i>Blood Brothers</i> revisited", "Complete devising log sections B/C"],
+            "second": ["Live theatre review", "Script exploration"]
+          },
+          "spring": {
+            "first": ["Script rehearsals / prep", "Component 1 recap"],
+            "second": ["Scripted module (Component 3)"]
+          },
+          "summer": {
+            "first": ["Revision"],
+            "second": []
+          }
+        }
+      },
+
+      "english-lang": {
+        "title": "English Language",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Explorations in creative reading and writing"],
+            "second": ["Writers' viewpoints and perspectives", "Reading and writing practice"]
+          },
+          "spring": {
+            "first": ["Writers' viewpoints and perspectives", "Reading and writing practice"],
+            "second": ["Explorations in creative reading and writing"]
+          },
+          "summer": {
+            "first": ["Revision for both Language papers"],
+            "second": []
+          }
+        }
+      },
+
+      "english-lit": {
+        "title": "English Literature",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["<i>An Inspector Calls</i>"],
+            "second": ["Power and conflict anthology - poems"]
+          },
+          "spring": {
+            "first": ["Unseen poetry practice"],
+            "second": ["<i>Romeo and Juliet</i> revision"]
+          },
+          "summer": {
+            "first": ["<i>A Christmas Carol</i> revision"],
+            "second": ["Revision for all aspects of Literature"]
+          }
+        }
+      },
+
+      "food-prep": {
+        "title": "Food Preparation and Nutrition",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["NEA 1 (non-examined assessment, 15% of final grade)", "AQA set task: Food investigation"],
+            "second": ["NEA 2 (35% of final grade)", "AQA set task: Food preparation"]
+          },
+          "spring": {
+            "first": ["NEA 2 food preparation task", "Cooking and evaluating dishes"],
+            "second": ["NEA 2 food preparation task", "3hr food practical exam", "Costing and evaluating nutrition"]
+          },
+          "summer": {
+            "first": ["Exam preparation: revision, practical activities and tests"],
+            "second": ["Final exam (90 mins, 50% of grade)"]
+          }
+        }
+      },
+
+      "french": {
+        "title": "French",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["NEA 1 GCSE Unit 6 - Celebrity Culture: discussing fame and popular culture", "Mock exams including mock speaking"],
+            "second": ["GCSE Unit 7 - Travel and Tourism: describing holidays and travelling"]
+          },
+          "spring": {
+            "first": ["GCSE Unit 8 - Media and Technology: discussing the uses of technology", "Mock exams including mock speaking"],
+            "second": ["GCSE Unit 9 - The Environment: discussing the planet and where we live"]
+          },
+          "summer": {
+            "first": ["Revision", "GCSE speaking exam and GCSE listening, reading and writing exams"],
+            "second": []
+          }
+        }
+      },
+
+      "geography": {
+        "title": "Geography",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Physical fieldwork: coasts"],
+            "second": ["Glaciated landscapes in the UK"]
+          },
+          "spring": {
+            "first": ["Introduction to resoure management", "Energy"],
+            "second": ["Paper 3 preparation: pre-release and fieldwork"]
+          },
+          "summer": {
+            "first": ["Preparation for exams"],
+            "second": []
+          }
+        }
+      },
+
+      "history": {
+        "title": "History",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Vietnam War"],
+            "second": ["USA Civil Rights"]
+          },
+          "spring": {
+            "first": ["Anglo Saxons and Normans"],
+            "second": ["Anglo Saxons and Normans"]
+          },
+          "summer": {
+            "first": ["Revision"],
+            "second": []
+          }
+        }
+      },
+
+      "mandarin": {
+        "title": "Mandarin Chinese",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Jobs and career", "Theme 2, T1: Home, town neighbourhood and region"],
+            "second": ["Mock practice", "Theme 2, T4: Travel and tourism"]
+          },
+          "spring": {
+            "first": ["Theme 2, T2: Social issues"],
+            "second": ["Theme 2, T3: Global issues", "Exam preparation: listening and reading skills"]
+          },
+          "summer": {
+            "first": ["Speaking test preparation", "Full topic revision and past paper practice"],
+            "second": ["listening, reading, and writing exams"]
+          }
+        }
+      },
+
+      "maths-fndtn": {
+        "title": "Mathematics, Foundation Tier",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Algebra - manipulation and equations", "Ratio and proportion"],
+            "second": ["Percentage multipliers", "Speed / distance / time", "Transformations"]
+          },
+          "spring": {
+            "first": ["Mock exam"],
+            "second": ["Consolidation and revision"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "maths-hghr": {
+        "title": "Mathematics, Higher Tier",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Simultaneous equations"],
+            "second": ["Complex graphs and the equation of a circle"]
+          },
+          "spring": {
+            "first": ["Growth and decay", "Percentage multipliers", "Proof", "Trigonometric graphs"],
+            "second": ["Revision and exam preparation"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "fthr-maths": {
+        "title": "Further Mathematics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Solving inequalities, binomial expansion, functions", "Advanced factorising, factor theorem", "Mock exam 1"],
+            "second": ["Circles and tangents, sequences, solving three simultaneous equations, differentiation"]
+          },
+          "spring": {
+            "first": ["Matrices, trigonometric graphs, identities and equations", "Mock exam 2"],
+            "second": ["Consolidation of weaker topics identified from mock exam 2"]
+          },
+          "summer": {
+            "first": ["Revision and exam preparation"],
+            "second": []
+          }
+        }
+      },
+
+      "media": {
+        "title": "Media Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Continue NEA (Component 3)"],
+            "second": ["TV dramas (Component 2)"]
+          },
+          "spring": {
+            "first": ["Music videos (Component 2)"],
+            "second": ["Revision"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "music": {
+        "title": "Music",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Brief composition (GCSE)"],
+            "second": ["Performance recording (GCSE)"]
+          },
+          "spring": {
+            "first": ["Performance skills (GCSE)"],
+            "second": ["Appraising exam preparation"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "pshee": {
+        "title": "Personal Social Health and Economic Education",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Mental health and wellbeing: GCSE stress, self care"],
+            "second": ["Drugs and alcohol: the law and dependency", "Online safety"]
+          },
+          "spring": {
+            "first": ["Being safe: exploitation online", "Respectful relationships: self examination, STIs, serious relationships"],
+            "second": ["Fundamental British values", "Careers and economic education"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "photography": {
+        "title": "Photography",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Unit 2: coursework project", "Develop independence", "Make own responses based on study of other photographer's work"],
+            "second": ["Research, develop ideas and skills", "Create personal response for controlled assessment"]
+          },
+          "spring": {
+            "first": ["Coursework final piece: produce a personal response", "Refine ideas, experiment, plan for final outcomes", "Evaluate and submit coursework, begin externally set task"],
+            "second": ["Develop mind maps, mood boards", "Digital manipulation", "Develop own ideas"]
+          },
+          "summer": {
+            "first": ["Review and refine skills and ideas", "Experiment, plan for final outcomes"],
+            "second": ["GCSE set task: produce personal response, a.k.a Final Piece", "End of year exhibition"]
+          }
+        }
+      },
+
+      "pe": {
+        "title": "Physical Education",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["NEA: Analysis and evaluation"],
+            "second": ["Paper 1: Movement analysis"]
+          },
+          "spring": {
+            "first": ["Paper 2: Sociocultural influences"],
+            "second": ["Revision"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "pe-core": {
+        "title": "Physical Education Core",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Paper 2: Skill classes and goal setting"],
+            "second": ["Paper 2: Information processing and guidance", "Paper 2: Mental preparation"]
+          },
+          "spring": {
+            "first": ["Paper 2: Engagement and commercialisation"],
+            "second": ["Paper 2: Ethical and sociocultural issues"]
+          },
+          "summer": {
+            "first": ["Paper 2: Physical, emotional and social", "Paper 2: Energy use"],
+            "second": ["Paper 2: Diet and nutrition"]
+          }
+        }
+      },
+
+      "physics": {
+        "title": "Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Atomic structure", "Electric circuits"],
+            "second": ["Electric circuits", "Further waves"]
+          },
+          "spring": {
+            "first": ["Further waves", "Forces and motion"],
+            "second": ["Pressure", "Electromagnetism"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "comb-sc-physics": {
+        "title": "Combined Science: Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Atomic Physics", "Electricity", "Forces and motion"],
+            "second": ["Forces and motion", "Electromagnetism"]
+          },
+          "spring": {
+            "first": ["Electromagnetism"],
+            "second": []
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "trip-sc-physics": {
+        "title": "Triple Science: Physics",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Atomic Physics", "Electricity", "Space and waves"],
+            "second": ["Forces and motion"]
+          },
+          "spring": {
+            "first": ["Forces and motion", "Waves", "Electromagnetism"],
+            "second": ["Electromagnetism"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "rs": {
+        "title": "Religious Studies",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["Religion and crime"],
+            "second": ["Christian practices"]
+          },
+          "spring": {
+            "first": ["Peace and conflict"],
+            "second": ["Revision"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      },
+
+      "spanish": {
+        "title": "Spanish",
+        "level": "GCSE",
+        "terms": {
+          "autumn": {
+            "first": ["GCSE Unit 6, Celebrity Culture: discussing fame and popular culture", "Mock exams including mock speaking"],
+            "second": ["GCSE Unit 7, Travel and Tourism: describing holidays and travelling"]
+          },
+          "spring": {
+            "first": ["GCSE Unit 9, The Environment: discussing the planet and where we live"],
+            "second": ["Revision", "GCSE speaking exam", "GCSE listening, reading and writing exams"]
+          },
+          "summer": {
+            "first": [],
+            "second": []
+          }
+        }
+      }
+
+    }
+
+  </script>
+

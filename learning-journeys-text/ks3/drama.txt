@@ -1,0 +1,70 @@
+id: drama
+menu title: Drama
+card title: Drama
+
+
+Y7
+
+HT1
+Introduction to Drama
+Characterisation through physical and vocal skills
+
+HT2
+Creating suspense <i>The Waxworks</i>
+
+HT3
+Live theatre review: <i>Shrek the Musical</i>
+
+HT4
+Issue based drama
+Child poverty: <i>Timothy Winters</i>
+
+HT5
+Storytelling - fairy stories
+
+HT6
+Working with script: <i>From Page to Stage</i>
+
+
+Y8
+
+HT1
+Develpoing characterisation through physical and vocal skills: <i>School Issues</i>
+
+HT2
+Creating suspense: <i>Darkwood Manor</i>
+
+HT3
+Issue based drama - social media
+
+HT4
+Live theatre review: <i>Peter Pan Goes Wrong</i>
+
+HT5
+Stroytelling - melodrama
+
+HT6
+Working with script - exloring a play in depth
+
+
+Y9
+
+HT1
+Exploring drama techniques
+Creating suspense - nightmares
+
+HT2
+Working with script
+<i>DNA</i> / <i>Legal Weapon</i>
+
+HT3
+Characterisation using stage combat
+
+HT4
+Storytelling trough different theatrical styles
+
+HT5
+Live theatre review
+
+HT6
+Issue based devising - social media / reality TV / crime

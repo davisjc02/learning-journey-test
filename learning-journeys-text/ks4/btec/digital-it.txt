@@ -1,0 +1,58 @@
+id: digital-it
+menu title: Digital IT
+card title: Digital IT
+
+
+Y10
+
+HT1
+Factors affecting the choice
+Definition and types of user interface
+
+HT2
+Hardware and software
+Accessibility
+Colours / fonts / languages / layout
+
+HT3
+Design principles
+Perception / retention / design
+
+HT4
+Project planning techniques
+Create a project plan
+
+HT5
+Create an initial design
+Developing a user interface
+
+HT6
+Refining the user interface
+Review
+
+
+Y11
+
+HT1
+Representing information
+Characteristics of data and information
+Suitability for processing
+Data processing
+
+HT2
+Sectors
+Threats
+Data processing methods
+
+HT3
+Quality of information
+Produce a dashboard
+
+HT4
+Drawing conclusions based on the data
+
+HT5
+How presentation affects understanding
+
+HT6
+null

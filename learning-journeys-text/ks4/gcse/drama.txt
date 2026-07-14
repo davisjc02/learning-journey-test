@@ -1,0 +1,52 @@
+id: drama
+menu title: Drama
+card title: Drama
+
+
+Y10
+
+HT1
+Introduction to GCSE
+Mock devising a project from a theme
+
+HT2
+Mock devising log
+Introduce play text: <i>Blood Brothers</i>
+
+HT3
+Exploring <i>Blood Brothers</i> - practical and written
+Devising skills
+
+HT4
+Component 2: devising
+
+HT5
+Devising rehearsals and preparation
+
+HT6
+Perform exam pieces
+Section A of devising log
+
+
+Y11
+
+HT1
+<i<Blood Brothers</i> revisited
+Complete devising log sections B/C
+
+HT2
+Live theatre review
+Script exploration
+
+HT3
+Script rehearsals / preparation
+Component 1 recap
+
+HT4
+Scripted module (Component 3)
+
+HT5
+Revision
+
+HT6
+null

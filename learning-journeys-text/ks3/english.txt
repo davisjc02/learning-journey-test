@@ -1,0 +1,67 @@
+id: english
+menu title: English
+card title: English
+
+
+Y7
+
+HT1
+Imagination and creativity: Introduction to English
+
+HT2
+Mythology
+
+HT3
+Rebellion, revolt, resistance: The Breadwinner
+
+HT4
+Social History: Charles Dickens
+
+HT5
+Shakespeare: Julius Caesar
+
+HT6
+Dystopia and Utopia
+The Three Musketeers
+
+
+Y8
+
+HT1
+The Gothic: stories over time
+
+HT2
+Childhood
+
+HT3
+War: Journey’s End
+
+HT4
+Nature, ornithology and Symbolism
+
+HT5
+Guilt and ambition: Shakespeare’s Macbeth
+
+HT6
+Diverse voices
+
+
+Y9
+
+HT1
+Social class and hierarchy: <i>Lord of thr Flies</i>
+
+HT2
+The environment and eco criticism
+
+HT3
+Tragedy and human nature
+
+HT4
+Power and conflict: poetry
+
+HT5
+GCSE spoken language endorsement
+
+HT6
+<i>Romeo and Juliet</i>
