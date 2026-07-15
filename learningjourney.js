@@ -92,9 +92,9 @@
 
       let titleHtml;
       if (subject=="pshee") {  // EDGE CASE!!
-        titleHtml = `<h4 style="font-size: 13px;">${data.title}<h4>`
+        titleHtml = `<h4 style="font-size: 13px;">${data.title}</h4>`
       } else {
-        titleHtml = `<h4>${data.title}<h4>`
+        titleHtml = `<h4>${data.title}</h4>`
       }
 
       document.getElementById("learning-journey-root").innerHTML = `
@@ -121,7 +121,7 @@
     function populateKS3Buttons(buttons) {
       const block = document.getElementById("ks3-button-block");
       block.replaceChildren()
-      for (const key in buttons) block.innerHTML += `<button class="ks3-subject-btn" type="button" data-subject="${key}">${buttons[key]}</button>`;
+      for (const [key, label] of Object.entries(buttons)) block.innerHTML += `<button class="ks3-subject-btn" type="button" data-subject="${key}">${label}</button>`;
     }
 
     function hookUpKS3Buttons(journeys, subject) {
@@ -135,27 +135,22 @@
       });
     }
 
+
     function populateKS4QualificationButtons(buttons) {
       const block = document.getElementById("ks4-qualification-button-block");
-      if (!block.hasChildNodes()) {
-        for (const key in buttons) {block.innerHTML += `<button class="ks4-qualification-btn" type="button" data-qualification="${key}">${buttons[key]}</button>`;}
-      }
+      if (!block.hasChildNodes()) for (const [key, label] of Object.entries(buttons)) {block.innerHTML += `<button class="ks4-qualification-btn" type="button" data-qualification="${key}">${label}</button>`;}
     }
 
     function populateKS4Buttons(blockID, buttonClass, buttons) {
       const block = document.getElementById(blockID);
-      if (!block.hasChildNodes()) for (const key in buttons) {block.innerHTML += `<button class="${buttonClass}" type="button" data-subject="${key}">${buttons[key]}</button>`;}
+      if (!block.hasChildNodes()) for (const [key, label] of Object.entries(buttons)) {block.innerHTML += `<button class="${buttonClass}" type="button" data-subject="${key}">${label}</button>`;}
     }
 
-
-    function hookUpY10(
-      qualification,
-      gcseJourneys, btecJourneys, cambnatJourneys,
-      y10GCSESubject, y10BTECSubject, y10CAMBNATSubject,
-    ) {
+  
+    function hookUpKS4(state) {
 
       document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
-        if (btn.dataset.qualification == qualification) {
+        if (btn.dataset.qualification == state.qualification) {
           btn.classList.add("current-btn");
         } else {
           btn.classList.remove("current-btn");
@@ -172,20 +167,10 @@
           document.querySelectorAll(".ks4-qualification-btn").forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
           btn.classList.add("current-btn");                                                                        // highlight the clicked one
 
-          qualification = btn.dataset.qualification;
+          state.qualification = btn.dataset.qualification;
 
-          if (qualification=="gcse") {
-            showKS4SubjectButtons("ks4-gcse-button-block");
-            renderJourney(gcseJourneys, y10GCSESubject);
-
-          } else if (qualification=="btec") {
-            showKS4SubjectButtons("ks4-btec-button-block");
-            renderJourney(btecJourneys, y10BTECSubject);
-
-          } else {
-            showKS4SubjectButtons("ks4-cambnat-button-block");
-            renderJourney(cambnatJourneys, y10CAMBNATSubject);
-          }
+          showKS4SubjectButtons(`ks4-${state.qualification}-button-block`);
+          renderJourney(state.gcseJourneys, state.gcseSubject);
 
         });
       });
@@ -194,13 +179,11 @@
       // on click: highlight current button, render the journey
       const GCSEBlock = document.querySelectorAll(".ks4-gcse-subject-btn");
       GCSEBlock.forEach(btn => {
-
         btn.addEventListener("click", () => {
           GCSEBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
           btn.classList.add("current-btn");                              // highlight the clicked one
-
-          y10GCSESubject = btn.dataset.subject;
-          renderJourney(gcseJourneys, y10GCSESubject);
+          state.gcseSubject = btn.dataset.subject;
+          renderJourney(state.gcseJourneys, state.gcseSubject);
         });
       });
 
@@ -208,13 +191,11 @@
       // on click: highlight current button, render the journey
       const BTECBlock = document.querySelectorAll(".ks4-btec-subject-btn");
       BTECBlock.forEach(btn => {
-
         btn.addEventListener("click", () => {
           BTECBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
           btn.classList.add("current-btn");                              // highlight the clicked one
-
-          y10BTECSubject = btn.dataset.subject;
-          renderJourney(btecJourneys, y10BTECSubject);
+          state.btecSubject = btn.dataset.subject;
+          renderJourney(state.btecJourneys, state.btecSubject);
         });
       });
 
@@ -222,122 +203,69 @@
       // on click: highlight current button, render the journey
       const CAMBNATBlock = document.querySelectorAll(".ks4-cambnat-subject-btn");
       CAMBNATBlock.forEach(btn => {
-
         btn.addEventListener("click", () => {
           CAMBNATBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
           btn.classList.add("current-btn");                                 // highlight the clicked one
-
-          y10CAMBNATSubject = btn.dataset.subject;
-          renderJourney(cambnatJourneys, y10CAMBNATSubject);
+          state.cambnatSubject = btn.dataset.subject;
+          renderJourney(state.cambnatJourneys, state.cambnatSubject);
         });
       });
 
     }
 
-    function hookUpY11(
-      qualification,
-      gcseJourneys, btecJourneys, cambnatJourneys,
-      y11GCSESubject, y11BTECSubject, y11CAMBNATSubject,
-    ) {
-
-      document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
-        if (btn.dataset.qualification == qualification) {
-          btn.classList.add("current-btn");
-        } else {
-          btn.classList.remove("current-btn");
-        }
-      });
-
-      // hook up the qualification buttons
-      // on click: highlight the current button, show the buttons,
-      // specify what data to use and render the current journey
-      document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
-
-        btn.addEventListener("click", () => {
-
-          document.querySelectorAll(".ks4-qualification-btn").forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
-          btn.classList.add("current-btn");                                                                        // highlight the clicked one
-
-          qualification = btn.dataset.qualification;
-
-          if (qualification=="gcse") {
-            showKS4SubjectButtons("ks4-gcse-button-block");
-            renderJourney(gcseJourneys, y11GCSESubject);
-
-          } else if (qualification=="btec") {
-            showKS4SubjectButtons("ks4-btec-button-block");
-            renderJourney(btecJourneys, y11BTECSubject);
-
-          } else {
-            showKS4SubjectButtons("ks4-cambnat-button-block");
-            renderJourney(cambnatJourneys, y11CAMBNATSubject);
-          }
-
-        });
-      });
-
-      // hook up the gcse subject buttons
-      // on click: highlight current button, render the journey
-      const GCSEBlock = document.querySelectorAll(".ks4-gcse-subject-btn");
-      GCSEBlock.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-          GCSEBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
-          btn.classList.add("current-btn");                              // highlight the clicked one
-
-          y11GCSESubject = btn.dataset.subject;
-          renderJourney(gcseJourneys, y11GCSESubject);
-        });
-      });
-
-      // hook up the btec subject buttons
-      // on click: highlight current button, render the journey
-      const BTECBlock = document.querySelectorAll(".ks4-btec-subject-btn");
-      BTECBlock.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-          BTECBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
-          btn.classList.add("current-btn");                              // highlight the clicked one
-
-          y11BTECSubject = btn.dataset.subject;
-          renderJourney(btecJourneys, y11BTECSubject);
-        });
-      });
-
-      // hook up the cambnat subject buttons
-      // on click: highlight current button, render the journey
-      const CAMBNATBlock = document.querySelectorAll(".ks4-cambnat-subject-btn");
-      CAMBNATBlock.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-          CAMBNATBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
-          btn.classList.add("current-btn");                                 // highlight the clicked one
-
-          y11CAMBNATSubject = btn.dataset.subject;
-          renderJourney(cambnatJourneys, y11CAMBNATSubject);
-        });
-      });
-
-    }
 
     export async function renderYear(year) {
 
-      let y7Subject = "art";
-      let y8Subject = "art";
-      let y9Subject = "art";
+      const y7State = {
+        title: "Key Stage 3: Year 7",
+        buttons: await getJSONData("./learning-journeys-data/ks3/y7-btns.json"),
+        journeys: await getJSONData("./learning-journeys-data/ks3/y7.json"),
+        subject: "art"
+      };
 
-      let qualification = "gcse";
-  
-      let y10GCSESubject = "art";
-      let y10BTECSubject = "creative-media-prod";
-      let y10CAMBNATSubject = "engin-manuf";
-      let y11GCSESubject = "art";
-      let y11BTECSubject = "creative-media-prod";
-      let y11CAMBNATSubject = "engin-manuf";
+      const y8State = {
+        title: "Key Stage 3: Year 8",
+        buttons: await getJSONData("./learning-journeys-data/ks3/y8-btns.json"),
+        journeys: await getJSONData("./learning-journeys-data/ks3/y8.json"),
+        subject: "art"
+      };
 
+      const y9State = {
+        title: "Key Stage 3: Year 9",
+        buttons: await getJSONData("./learning-journeys-data/ks3/y9-btns.json"),
+        journeys: await getJSONData("./learning-journeys-data/ks3/y9.json"),
+        subject: "art"
+      };
 
-      let gcseJourneys, btecJourneys, cambnatJourneys;
-      let buttons, journeys;
+      const y10State = {
+        title: "Key Stage 4: Year 10",
+        qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
+        qualification: "gcse",
+        gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y10-btns.json"),
+        btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y10-btns.json"),
+        cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10-btns.json"),
+        gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y10.json"),
+        btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y10.json"),
+        cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10.json"),
+        gcseSubject: "art",
+        btecSubject: "creative-media-prod",
+        cambnatSubject: "engin-manuf",
+      };
+
+      const y11State = {
+        title: "Key Stage 4: Year 11",
+        qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
+        qualification: "gcse",
+        gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y11-btns.json"),
+        btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y11-btns.json"),
+        cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11-btns.json"),
+        gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y11.json"),
+        btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y11.json"),
+        cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11.json"),
+        gcseSubject: "art",
+        btecSubject: "creative-media-prod",
+        cambnatSubject: "engin-manuf",
+      };
 
       document.getElementById("ks3-button-block").replaceChildren()
       document.getElementById("ks4-qualification-button-block").replaceChildren()
@@ -348,89 +276,70 @@
       switch(year) {
 
         case 7:
-          document.getElementById("title-container").innerHTML = `<h2>Key Stage 3: Year 7</h2>`;
-          populateKS3Buttons(await getJSONData("./learning-journeys-data/ks3/y7-btns.json"));
-          journeys = await getJSONData("./learning-journeys-data/ks3/y7.json");
-          hookUpKS3Buttons(journeys, y7Subject);
-          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y7Subject) {b.classList.add("current-btn");}});
-          renderJourney(journeys, y7Subject);
+          document.getElementById("title-container").innerHTML = `<h2>${y7State.title}</h2>`;
+          populateKS3Buttons(y7State.buttons);
+          hookUpKS3Buttons(y7State.journeys, y7State.subject);
+          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y7State.subject) {b.classList.add("current-btn");}});
+          renderJourney(y7State.journeys, y7State.subject);
           break;
 
         case 8:
-          document.getElementById("title-container").innerHTML = `<h2>Key Stage 3: Year 8</h2>`;
-          populateKS3Buttons(await getJSONData("./learning-journeys-data/ks3/y8-btns.json"));
-          journeys = await getJSONData("./learning-journeys-data/ks3/y8.json");
-          hookUpKS3Buttons(journeys, y8Subject);
-          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y8Subject) {b.classList.add("current-btn");}});
-          renderJourney(journeys, y8Subject);
+          document.getElementById("title-container").innerHTML = `<h2>${y8State.title}</h2>`;
+          populateKS3Buttons(y8State.buttons);
+          hookUpKS3Buttons(y8State.journeys, y8State.subject);
+          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y8State.subject) {b.classList.add("current-btn");}});
+          renderJourney(y8State.journeys, y8State.subject);
           break;
 
         case 9:
-          document.getElementById("title-container").innerHTML = `<h2>Key Stage 3: Year 9</h2>`;
-          populateKS3Buttons(await getJSONData("./learning-journeys-data/ks3/y9-btns.json"));
-          journeys = await getJSONData("./learning-journeys-data/ks3/y9.json");
-          hookUpKS3Buttons(journeys, y9Subject);
-          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y9Subject) {b.classList.add("current-btn");}});
-          renderJourney(journeys, y9Subject);
+          document.getElementById("title-container").innerHTML = `<h2>${y9State.title}</h2>`;
+          populateKS3Buttons(y9State.buttons);
+          hookUpKS3Buttons(y9State.journeys, y9State.subject);
+          document.querySelectorAll(".ks3-subject-btn").forEach(b => {if (b.dataset.subject == y9State.subject) {b.classList.add("current-btn");}});
+          renderJourney(y9State.journeys, y9State.subject);
           break;
 
         case 10:
-          document.getElementById("title-container").innerHTML = `<h2>Key Stage 4: Year 10</h2>`;
+          document.getElementById("title-container").innerHTML = `<h2>${y10State.title}</h2>`;
+          populateKS4QualificationButtons(y10State.qualificationButtons);
+          populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", y10State.gcseSubjectButtons);
+          populateKS4Buttons("ks4-btec-button-block", "ks4-btec-subject-btn", y10State.btecSubjectButtons);
+          populateKS4Buttons("ks4-cambnat-button-block", "ks4-cambnat-subject-btn", y10State.cambnatSubjectButtons);
 
-          buttons = {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"}
-          populateKS4QualificationButtons(buttons);
+          hookUpKS4(y10State);
+          showKS4SubjectButtons(`ks4-${y10State.qualification}-button-block`);
 
-          populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", await getJSONData("./learning-journeys-data/ks4/gcse/y10-btns.json"));
-          populateKS4Buttons("ks4-btec-button-block", "ks4-btec-subject-btn", await getJSONData("./learning-journeys-data/ks4/btec/y10-btns.json"));
-          populateKS4Buttons("ks4-cambnat-button-block", "ks4-cambnat-subject-btn", await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10-btns.json"));
+          document.querySelectorAll(".ks4-gcse-subject-btn").forEach(b => {if (b.dataset.subject == y10State.gcseSubject) {b.classList.add("current-btn");}});
+          document.querySelectorAll(".ks4-btec-subject-btn").forEach(b => {if (b.dataset.subject == y10State.btecSubject) {b.classList.add("current-btn");}});
+          document.querySelectorAll(".ks4-cambnat-subject-btn").forEach(b => {if (b.dataset.subject == y10State.cambnatSubject) {b.classList.add("current-btn");}});
 
-          gcseJourneys = await getJSONData("./learning-journeys-data/ks4/gcse/y10.json");
-          btecJourneys = await getJSONData("./learning-journeys-data/ks4/btec/y10.json");
-          cambnatJourneys = await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10.json");
-          hookUpY10(qualification, gcseJourneys, btecJourneys, cambnatJourneys, y10GCSESubject, y10BTECSubject, y10CAMBNATSubject);
-
-          showKS4SubjectButtons(`ks4-${qualification}-button-block`);
-
-          document.querySelectorAll(".ks4-gcse-subject-btn").forEach(b => {if (b.dataset.subject == y10GCSESubject) {b.classList.add("current-btn");}});
-          document.querySelectorAll(".ks4-btec-subject-btn").forEach(b => {if (b.dataset.subject == y10BTECSubject) {b.classList.add("current-btn");}});
-          document.querySelectorAll(".ks4-cambnat-subject-btn").forEach(b => {if (b.dataset.subject == y10CAMBNATSubject) {b.classList.add("current-btn");}});
-
-          renderJourney(gcseJourneys, "art");
+          renderJourney(y10State.gcseJourneys, y10State.gcseSubject);
           break;
 
         case 11:
-          document.getElementById("title-container").innerHTML = `<h2>Key Stage 4: Year 11</h2>`;
+          document.getElementById("title-container").innerHTML = `<h2>${y11State.title}</h2>`;
+          populateKS4QualificationButtons(y11State.qualificationButtons);
+          populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", y11State.gcseSubjectButtons);
+          populateKS4Buttons("ks4-btec-button-block", "ks4-btec-subject-btn", y11State.btecSubjectButtons);
+          populateKS4Buttons("ks4-cambnat-button-block", "ks4-cambnat-subject-btn", y11State.cambnatSubjectButtons);
 
-          buttons = {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"}
-          populateKS4QualificationButtons(buttons);
+          hookUpKS4(y11State);
+          showKS4SubjectButtons(`ks4-${y11State.qualification}-button-block`);
 
-          populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", await getJSONData("./learning-journeys-data/ks4/gcse/y11-btns.json"));
-          populateKS4Buttons("ks4-btec-button-block", "ks4-btec-subject-btn", await getJSONData("./learning-journeys-data/ks4/btec/y11-btns.json"));
-          populateKS4Buttons("ks4-cambnat-button-block", "ks4-cambnat-subject-btn", await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11-btns.json"));
+          document.querySelectorAll(".ks4-gcse-subject-btn").forEach(b => {if (b.dataset.subject == y11State.gcseSubject) {b.classList.add("current-btn");}});
+          document.querySelectorAll(".ks4-btec-subject-btn").forEach(b => {if (b.dataset.subject == y11State.btecSubject) {b.classList.add("current-btn");}});
+          document.querySelectorAll(".ks4-cambnat-subject-btn").forEach(b => {if (b.dataset.subject == y11State.cambnatSubject) {b.classList.add("current-btn");}});
 
-          gcseJourneys = await getJSONData("./learning-journeys-data/ks4/gcse/y11.json");
-          btecJourneys = await getJSONData("./learning-journeys-data/ks4/btec/y11.json");
-          cambnatJourneys = await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11.json");
-          hookUpY11(qualification, gcseJourneys, btecJourneys, cambnatJourneys, y11GCSESubject, y11BTECSubject, y11CAMBNATSubject);
-
-          showKS4SubjectButtons(`ks4-${qualification}-button-block`);
-
-          document.querySelectorAll(".ks4-gcse-subject-btn").forEach(b => {if (b.dataset.subject == y11GCSESubject) {b.classList.add("current-btn");}});
-          document.querySelectorAll(".ks4-btec-subject-btn").forEach(b => {if (b.dataset.subject == y11BTECSubject) {b.classList.add("current-btn");}});
-          document.querySelectorAll(".ks4-cambnat-subject-btn").forEach(b => {if (b.dataset.subject == y11CAMBNATSubject) {b.classList.add("current-btn");}});
-
-          renderJourney(gcseJourneys, "art");
+          renderJourney(y11State.gcseJourneys, y11State.gcseSubject);
           break;
 
         case 12:
-          buttons = await getJSONData("./learning-journeys-data/ks5/y12-btns.json");
-          journeys = await getJSONData("./learning-journeys-data/ks5/y12.json");
+
           break;
 
         case 13:
-          buttons = await getJSONData("./learning-journeys-data/ks5/y13-btns.json");
-          journeys = await getJSONData("./learning-journeys-data/ks5/y13.json");
-          break;
+
+        break;
 
         default:
           console.log("no such year!");
