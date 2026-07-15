@@ -148,7 +148,11 @@
     }
 
 
-    function hookUpKS4(year, qualification, gcseJourneys, btecJourneys, cambnatJourneys) {
+    function hookUpY10(
+      qualification,
+      gcseJourneys, btecJourneys, cambnatJourneys,
+      y10GCSESubject, y10BTECSubject, y10CAMBNATSubject,
+    ) {
 
       document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
         if (btn.dataset.qualification == qualification) {
@@ -165,47 +169,26 @@
 
         btn.addEventListener("click", () => {
 
-          // unhighlight all the buttons then highlight the clicked one
-          document.querySelectorAll(".ks4-qualification-btn").forEach(b => {b.classList.remove("current-btn");});
-          btn.classList.add("current-btn");
+          document.querySelectorAll(".ks4-qualification-btn").forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                                                                        // highlight the clicked one
 
           qualification = btn.dataset.qualification;
 
-          if (year == 10) {
+          if (qualification=="gcse") {
+            showKS4SubjectButtons("ks4-gcse-button-block");
+            renderJourney(gcseJourneys, y10GCSESubject);
 
-            if (qualification=="gcse") {
-              showKS4SubjectButtons("ks4-gcse-button-block");
-              renderJourney(gcseJourneys, y10GCSESubject);
-  
-            } else if (qualification=="btec") {
-              showKS4SubjectButtons("ks4-btec-button-block");
-              renderJourney(btecJourneys, y10BTECSubject);
-  
-            } else {
-              showKS4SubjectButtons("ks4-cambnat-button-block");
-              renderJourney(cambnatJourneys, y10CAMBNATSubject);
-            }
+          } else if (qualification=="btec") {
+            showKS4SubjectButtons("ks4-btec-button-block");
+            renderJourney(btecJourneys, y10BTECSubject);
 
           } else {
-
-            if (qualification=="gcse") {
-              showKS4SubjectButtons("ks4-gcse-button-block");
-              renderJourney(gcseJourneys, y11GCSESubject);
-  
-            } else if (qualification=="btec") {
-              showKS4SubjectButtons("ks4-btec-button-block");
-              renderJourney(btecJourneys, y11BTECSubject);
-  
-            } else {
-              showKS4SubjectButtons("ks4-cambnat-button-block");
-              renderJourney(cambnatJourneys, y11CAMBNATSubject);
-            }
-
+            showKS4SubjectButtons("ks4-cambnat-button-block");
+            renderJourney(cambnatJourneys, y10CAMBNATSubject);
           }
 
         });
       });
-
 
       // hook up the gcse subject buttons
       // on click: highlight current button, render the journey
@@ -213,18 +196,11 @@
       GCSEBlock.forEach(btn => {
 
         btn.addEventListener("click", () => {
-          // unhighlight all the buttons then highlight the clicked one
-          GCSEBlock.forEach(b => {b.classList.remove("current-btn");});
-          btn.classList.add("current-btn");
+          GCSEBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                              // highlight the clicked one
 
-          if (year == 10) {
-            y10GCSESubject = btn.dataset.subject;
-            renderJourney(gcseJourneys, y10GCSESubject);
-          } else {
-            y11GCSESubject = btn.dataset.subject;
-            renderJourney(gcseJourneys, y11GCSESubject);
-          }
-
+          y10GCSESubject = btn.dataset.subject;
+          renderJourney(gcseJourneys, y10GCSESubject);
         });
       });
 
@@ -234,18 +210,11 @@
       BTECBlock.forEach(btn => {
 
         btn.addEventListener("click", () => {
-          // unhighlight all the buttons then highlight the clicked one
-          BTECBlock.forEach(b => {b.classList.remove("current-btn");});
-          btn.classList.add("current-btn");
+          BTECBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                              // highlight the clicked one
 
-          if (year == 10) {
-            y10BTECSubject = btn.dataset.subject;
-            renderJourney(btecJourneys, y10BTECSubject);
-          } else {
-            y11BTECSubject = btn.dataset.subject;
-            renderJourney(btecJourneys, y11BTECSubject);
-          }
-
+          y10BTECSubject = btn.dataset.subject;
+          renderJourney(btecJourneys, y10BTECSubject);
         });
       });
 
@@ -255,26 +224,101 @@
       CAMBNATBlock.forEach(btn => {
 
         btn.addEventListener("click", () => {
+          CAMBNATBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                                 // highlight the clicked one
 
-          // unhighlight all the buttons then highlight the clicked one
-          CAMBNATBlock.forEach(b => {b.classList.remove("current-btn");});
+          y10CAMBNATSubject = btn.dataset.subject;
+          renderJourney(cambnatJourneys, y10CAMBNATSubject);
+        });
+      });
+
+    }
+
+    function hookUpY11(
+      qualification,
+      gcseJourneys, btecJourneys, cambnatJourneys,
+      y11GCSESubject, y11BTECSubject, y11CAMBNATSubject,
+    ) {
+
+      document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
+        if (btn.dataset.qualification == qualification) {
           btn.classList.add("current-btn");
+        } else {
+          btn.classList.remove("current-btn");
+        }
+      });
 
-          if (year == 10) {
-            y10CAMBNATSubject = btn.dataset.subject;
-            renderJourney(cambnatJourneys, y10CAMBNATSubject);
+      // hook up the qualification buttons
+      // on click: highlight the current button, show the buttons,
+      // specify what data to use and render the current journey
+      document.querySelectorAll(".ks4-qualification-btn").forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+          document.querySelectorAll(".ks4-qualification-btn").forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                                                                        // highlight the clicked one
+
+          qualification = btn.dataset.qualification;
+
+          if (qualification=="gcse") {
+            showKS4SubjectButtons("ks4-gcse-button-block");
+            renderJourney(gcseJourneys, y11GCSESubject);
+
+          } else if (qualification=="btec") {
+            showKS4SubjectButtons("ks4-btec-button-block");
+            renderJourney(btecJourneys, y11BTECSubject);
+
           } else {
-            y11CAMBNATSubject = btn.dataset.subject;
+            showKS4SubjectButtons("ks4-cambnat-button-block");
             renderJourney(cambnatJourneys, y11CAMBNATSubject);
           }
 
         });
       });
 
+      // hook up the gcse subject buttons
+      // on click: highlight current button, render the journey
+      const GCSEBlock = document.querySelectorAll(".ks4-gcse-subject-btn");
+      GCSEBlock.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+          GCSEBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                              // highlight the clicked one
+
+          y11GCSESubject = btn.dataset.subject;
+          renderJourney(gcseJourneys, y11GCSESubject);
+        });
+      });
+
+      // hook up the btec subject buttons
+      // on click: highlight current button, render the journey
+      const BTECBlock = document.querySelectorAll(".ks4-btec-subject-btn");
+      BTECBlock.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+          BTECBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                              // highlight the clicked one
+
+          y11BTECSubject = btn.dataset.subject;
+          renderJourney(btecJourneys, y11BTECSubject);
+        });
+      });
+
+      // hook up the cambnat subject buttons
+      // on click: highlight current button, render the journey
+      const CAMBNATBlock = document.querySelectorAll(".ks4-cambnat-subject-btn");
+      CAMBNATBlock.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+          CAMBNATBlock.forEach(b => {b.classList.remove("current-btn");});  // unhighlight all the buttons
+          btn.classList.add("current-btn");                                 // highlight the clicked one
+
+          y11CAMBNATSubject = btn.dataset.subject;
+          renderJourney(cambnatJourneys, y11CAMBNATSubject);
+        });
+      });
+
     }
-
-
-
 
     export async function renderYear(year) {
 
@@ -293,7 +337,6 @@
 
 
       let gcseJourneys, btecJourneys, cambnatJourneys;
-      let gcseButtons, btecButtons, cambnatButtons;
       let buttons, journeys;
 
       document.getElementById("ks3-button-block").replaceChildren()
@@ -344,7 +387,7 @@
           gcseJourneys = await getJSONData("./learning-journeys-data/ks4/gcse/y10.json");
           btecJourneys = await getJSONData("./learning-journeys-data/ks4/btec/y10.json");
           cambnatJourneys = await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10.json");
-          hookUpKS4(year, qualification, gcseJourneys, btecJourneys, cambnatJourneys);
+          hookUpY10(qualification, gcseJourneys, btecJourneys, cambnatJourneys, y10GCSESubject, y10BTECSubject, y10CAMBNATSubject);
 
           showKS4SubjectButtons(`ks4-${qualification}-button-block`);
 
@@ -368,7 +411,7 @@
           gcseJourneys = await getJSONData("./learning-journeys-data/ks4/gcse/y11.json");
           btecJourneys = await getJSONData("./learning-journeys-data/ks4/btec/y11.json");
           cambnatJourneys = await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11.json");
-          hookUpKS4(year, qualification, gcseJourneys, btecJourneys, cambnatJourneys);
+          hookUpY11(qualification, gcseJourneys, btecJourneys, cambnatJourneys, y11GCSESubject, y11BTECSubject, y11CAMBNATSubject);
 
           showKS4SubjectButtons(`ks4-${qualification}-button-block`);
 
