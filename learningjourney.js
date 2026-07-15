@@ -216,57 +216,6 @@
 
     export async function renderYear(year) {
 
-      const y7State = {
-        title: "Key Stage 3: Year 7",
-        buttons: await getJSONData("./learning-journeys-data/ks3/y7-btns.json"),
-        journeys: await getJSONData("./learning-journeys-data/ks3/y7.json"),
-        subject: "art"
-      };
-
-      const y8State = {
-        title: "Key Stage 3: Year 8",
-        buttons: await getJSONData("./learning-journeys-data/ks3/y8-btns.json"),
-        journeys: await getJSONData("./learning-journeys-data/ks3/y8.json"),
-        subject: "art"
-      };
-
-      const y9State = {
-        title: "Key Stage 3: Year 9",
-        buttons: await getJSONData("./learning-journeys-data/ks3/y9-btns.json"),
-        journeys: await getJSONData("./learning-journeys-data/ks3/y9.json"),
-        subject: "art"
-      };
-
-      const y10State = {
-        title: "Key Stage 4: Year 10",
-        qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
-        qualification: "gcse",
-        gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y10-btns.json"),
-        btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y10-btns.json"),
-        cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10-btns.json"),
-        gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y10.json"),
-        btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y10.json"),
-        cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10.json"),
-        gcseSubject: "art",
-        btecSubject: "creative-media-prod",
-        cambnatSubject: "engin-manuf",
-      };
-
-      const y11State = {
-        title: "Key Stage 4: Year 11",
-        qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
-        qualification: "gcse",
-        gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y11-btns.json"),
-        btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y11-btns.json"),
-        cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11-btns.json"),
-        gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y11.json"),
-        btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y11.json"),
-        cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11.json"),
-        gcseSubject: "art",
-        btecSubject: "creative-media-prod",
-        cambnatSubject: "engin-manuf",
-      };
-
       document.getElementById("ks3-button-block").replaceChildren()
       document.getElementById("ks4-qualification-button-block").replaceChildren()
       document.getElementById("ks4-gcse-button-block").replaceChildren()
@@ -276,6 +225,13 @@
       switch(year) {
 
         case 7:
+          const y7State = {
+            title: "Key Stage 3: Year 7",
+            buttons: await getJSONData("./learning-journeys-data/ks3/y7-btns.json"),
+            journeys: await getJSONData("./learning-journeys-data/ks3/y7.json"),
+            subject: "art"
+          };
+    
           document.getElementById("title-container").innerHTML = `<h2>${y7State.title}</h2>`;
           populateKS3Buttons(y7State.buttons);
           hookUpKS3Buttons(y7State.journeys, y7State.subject);
@@ -284,6 +240,13 @@
           break;
 
         case 8:
+          const y8State = {
+            title: "Key Stage 3: Year 8",
+            buttons: await getJSONData("./learning-journeys-data/ks3/y8-btns.json"),
+            journeys: await getJSONData("./learning-journeys-data/ks3/y8.json"),
+            subject: "art"
+          };
+    
           document.getElementById("title-container").innerHTML = `<h2>${y8State.title}</h2>`;
           populateKS3Buttons(y8State.buttons);
           hookUpKS3Buttons(y8State.journeys, y8State.subject);
@@ -292,6 +255,13 @@
           break;
 
         case 9:
+          const y9State = {
+            title: "Key Stage 3: Year 9",
+            buttons: await getJSONData("./learning-journeys-data/ks3/y9-btns.json"),
+            journeys: await getJSONData("./learning-journeys-data/ks3/y9.json"),
+            subject: "art"
+          };
+    
           document.getElementById("title-container").innerHTML = `<h2>${y9State.title}</h2>`;
           populateKS3Buttons(y9State.buttons);
           hookUpKS3Buttons(y9State.journeys, y9State.subject);
@@ -300,6 +270,21 @@
           break;
 
         case 10:
+          const y10State = {
+            title: "Key Stage 4: Year 10",
+            qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
+            qualification: "gcse",
+            gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y10-btns.json"),
+            btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y10-btns.json"),
+            cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10-btns.json"),
+            gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y10.json"),
+            btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y10.json"),
+            cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y10.json"),
+            gcseSubject: "art",
+            btecSubject: "creative-media-prod",
+            cambnatSubject: "engin-manuf",
+          };
+    
           document.getElementById("title-container").innerHTML = `<h2>${y10State.title}</h2>`;
           populateKS4QualificationButtons(y10State.qualificationButtons);
           populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", y10State.gcseSubjectButtons);
@@ -317,6 +302,21 @@
           break;
 
         case 11:
+          const y11State = {
+            title: "Key Stage 4: Year 11",
+            qualificationButtons: {"gcse": "GCSE", "btec": "BTEC", "cambnat": "Cambridge National"},
+            qualification: "gcse",
+            gcseSubjectButtons: await getJSONData("./learning-journeys-data/ks4/gcse/y11-btns.json"),
+            btecSubjectButtons: await getJSONData("./learning-journeys-data/ks4/btec/y11-btns.json"),
+            cambnatSubjectButtons: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11-btns.json"),
+            gcseJourneys: await getJSONData("./learning-journeys-data/ks4/gcse/y11.json"),
+            btecJourneys: await getJSONData("./learning-journeys-data/ks4/btec/y11.json"),
+            cambnatJourneys: await getJSONData("./learning-journeys-data/ks4/cambridge-national/y11.json"),
+            gcseSubject: "art",
+            btecSubject: "creative-media-prod",
+            cambnatSubject: "engin-manuf",
+          };
+    
           document.getElementById("title-container").innerHTML = `<h2>${y11State.title}</h2>`;
           populateKS4QualificationButtons(y11State.qualificationButtons);
           populateKS4Buttons("ks4-gcse-button-block", "ks4-gcse-subject-btn", y11State.gcseSubjectButtons);
